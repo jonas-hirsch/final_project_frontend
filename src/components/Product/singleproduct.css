@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  button {
+    padding: 10px;
+    margin: 0 auto;
+    background-color: rgba(6,85,141,255);
+    border-radius: 5px;
+    color: whitesmoke;
+    
+
+}
