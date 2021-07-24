@@ -7,6 +7,8 @@ import SingleProduct from './components/Product/SingleProduct';
 import Cart from './components/Cart/Cart';
 import UserProfile from './components/UserProfil/UserProfile';
 // import Messages from './components/Messages/messages';
+import Footer from './components/Footer/Footer';
+
 
 
 const App = () => {
@@ -36,6 +38,7 @@ const App = () => {
           <Home />
         </Route>
       </Switch>
+      <Footer />
     </Router>
     
   );
