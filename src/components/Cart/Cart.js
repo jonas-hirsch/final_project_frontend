@@ -1,9 +1,19 @@
 import React from 'react'
 
-const Cart = () => {
+const Cart = (product) => {
     return (
-        <div>
-            <h1>This is your Shopping Cart</h1>
+        <div className='root' style={{height:'50vh'}}>
+            <div>
+                <h1>Your Cart</h1>
+            </div>
+            <div>
+                <img style={{width:'15%'}} src={product.media ? product.media[0].path : 'defaultProductPicture.jpeg'} alt='Productview'></img>
+            </div>
+            <div>
+           
+            </div>
+
+6
         </div>
     )
 }
