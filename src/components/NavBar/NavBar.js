@@ -16,7 +16,6 @@ const NavBar = () => {
             <span><Link className="categorie_button"  to='/'>COD/NG</Link></span>
         </div>
         <div className='navBar_categorie'>
-            <span><Link className="categorie_button">NEWS</Link></span>
             <span><Link className="categorie_button" to='/products'>CLOTHING</Link></span>
             <span><Link className="categorie_button" to='/products'>TRENDS</Link></span>
             <span><Link className="categorie_button" to='/products'>GEAR</Link></span>

@@ -8,6 +8,7 @@ import Cart from './components/Cart/Cart';
 import UserProfile from './components/UserProfil/UserProfile';
 // import Messages from './components/Messages/messages';
 import Footer from './components/Footer/Footer';
+import Main from './components/Main/Main'
 
 
 
@@ -18,10 +19,11 @@ const App = () => {
   return (
     <Router>
       <NavBar />
+
       <Switch>
-        {/* <Route path="/myMessages">
-          <Message/>
-        </Route> */}
+        <Route path="/Shop">
+          <Main />
+        </Route>
         <Route path="/myProfil">
           <UserProfile/>
         </Route>
