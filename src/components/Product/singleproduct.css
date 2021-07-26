@@ -4,6 +4,7 @@
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
+    height: 100vh;
   }
 
   button {
@@ -12,6 +13,4 @@
     background-color: rgba(6,85,141,255);
     border-radius: 5px;
     color: whitesmoke;
-    
-
 }
