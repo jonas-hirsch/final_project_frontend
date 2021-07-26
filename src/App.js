@@ -5,10 +5,10 @@ import Home from "./components/Home/Home"
 import NavBar from "./components/NavBar/NavBar"
 import SingleProduct from './components/Product/SingleProduct';
 import Cart from './components/Cart/Cart';
-import UserProfile from './components/UserProfil/UserProfile';
 // import Messages from './components/Messages/messages';
 import Footer from './components/Footer/Footer';
-import Main from './components/Main/Main'
+import Contact from './components/Contact/Contact'
+
 
 
 
@@ -21,11 +21,9 @@ const App = () => {
       <NavBar />
 
       <Switch>
-        <Route path="/Shop">
-          <Main />
-        </Route>
-        <Route path="/myProfil">
-          <UserProfile/>
+        
+        <Route path="/contact">
+          <Contact/>
         </Route>
         <Route path="/myCart">
           <Cart/>
