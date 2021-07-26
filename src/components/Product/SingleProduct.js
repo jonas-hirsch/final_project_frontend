@@ -33,8 +33,9 @@ const SingleProduct = (realProducts) => {
             <h2>This is the Single Product Page</h2>
             <div key={singleProduct.id} className="singleProduct_container">
                         <h2>{singleProduct.title}</h2>
-                        <h3>{singleProduct.description}</h3>
-                        <h3>{singleProduct.stock[0].price}</h3>
+                        <img style={{width:'100%'}} src={singleProduct.media ? singleProduct.media[0].path : 'defaultProductPicture.jpeg'} alt='Productview'></img>
+                        <p>{singleProduct.description}</p>
+                        <p>{singleProduct.stock[0].price}</p>
                         <button>Add to Cart</button>
                     </div>
         </div>      

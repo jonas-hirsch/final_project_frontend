@@ -4,6 +4,10 @@
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+    height: 100%;
+  }
+  p{
+      margin: 10px;
   }
   #container{
       
@@ -13,22 +17,16 @@
       border: 1px solid #222;
       border-radius: 4px;
       padding: 10px;
-      
-      
-      
   }
-  .container * {
-      
-      
-
-  }
-
   button {
     padding: 10px;
     margin-top: 5px;
     background-color: rgba(6,85,141,255);
     border-radius: 5px;
     color: whitesmoke;
+}
+h2 {
+    justify-content: center;
 }
 
 @media only screen and (min-width: 1024px) {

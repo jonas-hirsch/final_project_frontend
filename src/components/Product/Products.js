@@ -21,6 +21,8 @@ const Product = () => {
     })
   },[]);
 
+  if (!realProducts) return <span>Loading...</span>
+
     return (
         <div className="root">
             {realProducts && realProducts.filter(product => product.stock).map((product) => {
@@ -28,9 +30,9 @@ const Product = () => {
                 return (
                   <div key={product.id} id="container">
                       <h2>{product.title}</h2>
-                      <img style={{width:'100%'}} src={product.media ? product.media[0].path : 'defaultProductPicture.jpeg'}></img>
+                      <img style={{width:'100%'}} src={product.media ? product.media[0].path : 'defaultProductPicture.jpeg'} alt='Productview'></img>
                       <p>{product.description}</p>
-                      <p>{product.stock[0].price}</p>
+                      <p>{product.stock[0].price}€</p>
                       <div style={{display:'flex', justifyContent: 'space-between',}}>
                       <Link to={"/shop/"+product.id}><button>More Details</button> </Link>
                       <Link to={"/shop/"+product.id}><button>Add to Cart</button> </Link>
