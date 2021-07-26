@@ -1,27 +1,31 @@
 .root{
     display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: row;
-     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
-  .container{
+  #container{
+      
       min-width: 360px;
       max-width: 410px;
-      margin: 20px auto;
+      margin: 20px 0px;
       border: 1px solid #222;
       border-radius: 4px;
+      padding: 10px;
+      
+      
       
   }
   .container * {
-      padding: 10px;
+      
       
 
   }
 
   button {
     padding: 10px;
-    margin-top: 25px;
+    margin-top: 5px;
     background-color: rgba(6,85,141,255);
     border-radius: 5px;
     color: whitesmoke;

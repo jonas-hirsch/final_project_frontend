@@ -19,7 +19,7 @@ const contact = () => {
                         <a href='#'>Facebook</a>
                     </div>
                     <div style={{display:'block', width:'50vw', justifyContent:"space-around", margin: '50px auto'}}>
-                        <input type='text' placeholder='You Email' style={{width:'50vw', justifyContent:"space-around", margin: '10px auto'}}/><br/>
+                        <input type='text' placeholder='Your Email' style={{width:'50vw', justifyContent:"space-around", margin: '10px auto'}}/><br/>
                         <textarea style={{width:'50vw', height:'100px'}} type='textarea' placeholder='Write your Message here....'></textarea><br/>
                         <button>Send Message</button>
                     </div>
