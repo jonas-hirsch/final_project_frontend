@@ -1,0 +1,1 @@
+<div><ul><li><strong>Material/ Fabric</strong>: 100% Cotton, Bio-Wash</li><li><strong>Size &amp; Fit</strong>: This brand runs true to size. To ensure the best fit, we suggest consulting the size chart.</li><li><strong>Wash</strong>: Don&#8217;t use Soap or Detergent directly on print.</li></ul></div>

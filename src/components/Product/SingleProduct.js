@@ -51,20 +51,18 @@ const SingleProduct = (realProducts) => {
     return (
 
         <div className='container'>
-            <h2 >This is the Single Product Page</h2>
-                    <div key={singleProduct.id} className="singleProduct_container">
+            
+                    <div style={{width:'90%', textAlign: 'center', border:'1px solid black', margin:'50px auto'}} key={singleProduct.id} className="singleProduct_container">
                         <h2>{singleProduct.title}</h2>
-                        <img style={{width:'100%'}} src={singleProduct.media ? singleProduct.media[0].path : 'defaultProductPicture.jpeg'} alt='Productview'></img>
-                        <div style={{display: 'flex', justifyContent:'space-between', width:'70%'}} >
-                            <img style={{width:'23%'}} src={singleProduct.media ? singleProduct.media[1].path : 'defaultProductPicture.jpeg'} alt='Productview'></img>
-                            <img style={{width:'23%'}} src={singleProduct.media ? singleProduct.media[1].path : 'defaultProductPicture.jpeg'} alt='Productview'></img>
-                            <img style={{width:'23%'}} src={singleProduct.media ? singleProduct.media[1].path : 'defaultProductPicture.jpeg'} alt='Productview'></img>
+                        <img style={{width:'50%', border:'1px solid black'}} src={singleProduct.media ? singleProduct.media[0].path : 'defaultProductPicture.jpeg'} alt='Productview'></img>
+                        <div style={{display: 'flex', justifyContent:'center', width:'70%'}} >
+                            <img style={{width:'10%'}} src={singleProduct.media ? singleProduct.media[0].path : 'defaultProductPicture.jpeg'} alt='Productview'></img>
+                            <img style={{width:'10%'}} src={singleProduct.media ? singleProduct.media[1].path : 'defaultProductPicture.jpeg'} alt='Productview'></img>
+                            <img style={{width:'10%'}} src={singleProduct.media ? singleProduct.media[2].path : 'defaultProductPicture.jpeg'} alt='Productview'></img>
                         </div>
-
-
-                        <p>{singleProduct.description}</p>
+                        <div dangerouslySetInnerHTML={{__html: singleProduct.description}}></div>
                         <p>{singleProduct.stock[0].price}</p>
-                        <Link><button>Add to Cart</button></Link>
+                        <Link><button style={{margin:'50px 50px', width:'60%'}}>Add to Cart</button></Link>
                     </div>
         </div>      
         )};
