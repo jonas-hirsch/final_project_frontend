@@ -27,6 +27,26 @@ const SingleProduct = (realProducts) => {
 
     if (!singleProduct) return <span>Loading...</span>
 
+    
+
+
+    const addToCart_serialized =JSON.stringify([singleProduct]);
+    console.log(addToCart_serialized);
+
+    // const addToCart = () => {
+    //     let cart = localStorage.getItem('Cart')
+    //     if (!cart){
+    //         localStorage.setItem('Cart', addToCart_serialized);
+    //     } else {
+    //         localStorage.setItem('Cart', [...cart, addToCart_serialized])
+    //     }
+    //     localStorage.setItem('Cart', addToCart_serialized);
+    //     console.log(singleProduct);
+    // }
+
+
+
+
 
     return (
 
@@ -44,7 +64,7 @@ const SingleProduct = (realProducts) => {
 
                         <p>{singleProduct.description}</p>
                         <p>{singleProduct.stock[0].price}</p>
-                        <Link to='/myCart'><button>Add to Cart</button></Link>
+                        <Link><button>Add to Cart</button></Link>
                     </div>
         </div>      
         )};
