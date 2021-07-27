@@ -13,7 +13,7 @@ const NavBar = () => {
     <>
     <div className="navBar">
         <div>
-            <span><Link className="categorie_button"  to='/'>COD/NG</Link></span>
+            <span><Link className="categorie_button"  to='/'>JBM</Link></span>
         </div>
         <div className='navBar_categorie'>
             <span><Link className="categorie_button" to='/catalog'>HOME</Link></span>

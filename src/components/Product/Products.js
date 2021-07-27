@@ -31,7 +31,7 @@ const Product = () => {
                   <div key={product.id} id="container">
                       <h2>{product.title}</h2>
                       <img style={{width:'100%'}} src={product.media ? product.media[0].path : 'defaultProductPicture.jpeg'} alt='Productview'></img>
-                      <p>{product.description}</p>
+                      
                       <p>{product.stock[0].price}€</p>
                       <div style={{display:'flex', justifyContent: 'space-between',}}>
                       <Link to={"/shop/"+product.id}><button>More Details</button> </Link>
