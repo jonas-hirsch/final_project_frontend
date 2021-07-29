@@ -1,11 +1,50 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useCallback, useEffect } from "react";
+import { useHistory, Redirect } from "react-router-dom";
+
+import { login, getToken } from "../../utils/auth";
+import client from "../../utils/client";
 
 const LoginForm = ({ setDisplayLogin, setDisplayResetPassword }) => {
-  const performLogin = (e) => {
+  const history = useHistory();
+  const [me, setMe] = useState();
+
+  const performLogin = async (e) => {
     e.preventDefault();
-    console.log(e.target.email.value);
-    console.log(e.target.password.value);
+
+    const isAuthenticated = await login({
+      email: e.target.email.value,
+      password: e.target.password.value,
+    });
+    if (isAuthenticated) {
+      alert("Successfully loged in");
+      getContext();
+    } else {
+      alert("Failed to login");
+    }
   };
+
+  const getContext = useCallback(async () => {
+    try {
+      const meResult = await client.get("/auth/me");
+      const { data } = meResult;
+      if (data) {
+        console.log(data);
+        setMe(data);
+        console.log("Push to root");
+        history.push("/");
+      }
+    } catch (e) {
+      console.log("User not logged in:", e.message);
+    }
+  }, [history]);
+
+  useEffect(() => {
+    if (getToken()) {
+      getContext();
+    }
+  }, [getContext]);
+
   const displayResetPassword = () => {
     setDisplayLogin(false);
     setDisplayResetPassword(true);
