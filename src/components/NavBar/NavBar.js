@@ -16,9 +16,9 @@ const NavBar = () => {
             <span><Link className="categorie_button"  to='/'>JBM</Link></span>
         </div>
         <div className='navBar_categorie'>
-            <span><Link className="categorie_button" to='/catalog'>HOME</Link></span>
+            <span><Link className="categorie_button" to='/Home'>HOME</Link></span>
             <span><Link className="categorie_button" to='/catalog'>CATALOG</Link></span>
-            <span><Link className="categorie_button" to='/catalog'>ACCESOIRE</Link></span>
+            <span><Link className="categorie_button" to='/contact'>CONTACT</Link></span>
         </div>
         <div className="navBar-links">
             <span><Link className="categorie_button" to='/myCart'>Shopping Cart</Link></span>

@@ -8,6 +8,8 @@ import Cart from './components/Cart/Cart';
 // import Messages from './components/Messages/messages';
 import Footer from './components/Footer/Footer';
 import Contact from './components/Contact/Contact'
+import Message from './components/Message/Message';
+import ProductsCategory from './components/Product/ProductsCategory';
 
 
 
@@ -21,17 +23,22 @@ const App = () => {
       <NavBar />
 
       <Switch>
-        
+        <Route path="/catalog/category/:id">
+          <ProductsCategory/>
+        </Route>
+        <Route path="/mymessage">
+          <Message/>
+        </Route>
         <Route path="/contact">
           <Contact/>
         </Route>
         <Route path="/myCart">
           <Cart/>
         </Route>
-        <Route path="/shop/:id">
+        <Route path="/catalog/:id">
           <SingleProduct/>
         </Route>
-        <Route path="/shop">
+        <Route path="/catalog">
           <Products />
         </Route>
         <Route path="/"> 

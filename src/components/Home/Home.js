@@ -10,7 +10,7 @@ const Home = () => {
             <div style={{ width: "100%", height: "100%", textAlign: 'center', margin: '50px auto'}} >
                 <div >
                     <img src='#' alt='#' />
-                    <button>Shop Now</button>
+                    <Link to='/catalog'><button>Shop Now</button></Link>
                     <h3>Discover</h3>
                     <p>Minimal and Trends for Developer</p>
                 </div>
@@ -18,7 +18,7 @@ const Home = () => {
                     <img src='#' alt='#'/>
                     <h3>Shirts</h3>
                     <p>Developer Shirts for everybody</p>
-                    <a href='#'>Discover more</a>
+                    <a href='/catalog'>Discover more</a>
                 </div>
                 <div>
                     <img src='#' alt='#'/>
@@ -29,12 +29,12 @@ const Home = () => {
                 <div>
                     <img src='#' alt='#'/>
                     <h3>Accesoire</h3>
-                    <p>Always have the little Accesoir which makes you special</p>
+                    <p>Always have the little Accessoir which makes you special</p>
                     <a href='#'>Discover more </a>
                 </div>
                 <div className="eat_code_sleep_container">
                     <h1>EAT. SLEEP. CODE. REPEAT.</h1> 
-                    <Link to='/shop'><button>Shop Now</button> </Link>
+                    <Link to='/catalog'><button>Shop Now</button> </Link>
                 </div>
                 <div>
                     <img src='#' alt='#'/>
