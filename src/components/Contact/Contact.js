@@ -41,6 +41,15 @@ const Contact = () => {
           >
             <input
               type="text"
+              placeholder="Your Name"
+              style={{
+                width: "50vw",
+                justifyContent: "space-around",
+                margin: "10px auto",
+              }}
+            />
+            <input
+              type="text"
               placeholder="Your Email"
               style={{
                 width: "50vw",

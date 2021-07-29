@@ -34,8 +34,8 @@ const Product = () => {
                       
                       <p>{product.stock[0].price}€</p>
                       <div style={{display:'flex', justifyContent: 'space-between',}}>
-                      <Link to={"/shop/"+product.id}><button>More Details</button> </Link>
-                      <Link to={"/shop/"+product.id}><button>Add to Cart</button> </Link>
+                      <Link to={"/catalog/"+product.id}><button>More Details</button> </Link>
+                      <Link to={"/catalog/"+product.id}><button>Add to Cart</button> </Link>
                       </div>
                   </div>
               )
