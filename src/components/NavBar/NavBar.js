@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./styles.css";
 import { Link } from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
 
 const NavBar = () => {
+  const { me } = useContext(AuthContext);
   return (
     <>
       <div className="navBar">
@@ -31,9 +33,15 @@ const NavBar = () => {
           </span>
         </div>
         <span>
-          <Link className="categorie_button" to="/login">
-            Login
-          </Link>
+          {me ? (
+            <Link className="categorie_button" to="/logout">
+              Logout
+            </Link>
+          ) : (
+            <Link className="categorie_button" to="/login">
+              Login
+            </Link>
+          )}
         </span>
         <div className="navBar-links">
           <span>

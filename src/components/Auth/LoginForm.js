@@ -1,13 +1,13 @@
-import axios from "axios";
-import React, { useState, useCallback, useEffect } from "react";
-import { useHistory, Redirect } from "react-router-dom";
+import React, { useContext, useCallback, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
 
-import { login, getToken } from "../../utils/auth";
+import { login, getToken, getUserContext } from "../../utils/auth";
 import client from "../../utils/client";
 
 const LoginForm = ({ setDisplayLogin, setDisplayResetPassword }) => {
   const history = useHistory();
-  const [me, setMe] = useState();
+  const { setMe } = useContext(AuthContext);
 
   const performLogin = async (e) => {
     e.preventDefault();
@@ -25,19 +25,12 @@ const LoginForm = ({ setDisplayLogin, setDisplayResetPassword }) => {
   };
 
   const getContext = useCallback(async () => {
-    try {
-      const meResult = await client.get("/auth/me");
-      const { data } = meResult;
-      if (data) {
-        console.log(data);
-        setMe(data);
-        console.log("Push to root");
-        history.push("/");
-      }
-    } catch (e) {
-      console.log("User not logged in:", e.message);
+    const data = getUserContext(setMe);
+    if (data) {
+      console.log("Push to root");
+      history.push("/");
     }
-  }, [history]);
+  }, [history, setMe]);
 
   useEffect(() => {
     if (getToken()) {

@@ -12,7 +12,7 @@ const removeToken = () => Cookies.remove(`${REACT_APP_APP_NAME}-auth-token`);
 
 const logout = (history) => {
   removeToken();
-  history.push("/auth");
+  history.push("/login");
 };
 
 const login = async (credentials) => {
@@ -33,4 +33,19 @@ const login = async (credentials) => {
   }
 };
 
-export { login, setToken, getToken, logout };
+const getUserContext = async (setMe) => {
+  try {
+    const meResult = await client.get("/auth/me");
+    const { data } = meResult;
+    if (data) {
+      setMe(data);
+      console.log(data);
+
+      return data;
+    }
+  } catch (e) {
+    console.log("User not logged in:", e.message);
+  }
+};
+
+export { login, setToken, getToken, logout, getUserContext };
