@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
+import {logout} from "../../utils/auth";
+import {useHistory} from "react-router-dom";
 import { Menu24, Home24, Email24, ShoppingBag24, ShoppingCart24 } from '@carbon/icons-react';
 
 
 const NavBar = () => {
 	const [isOpen, setIsOpen] = useState(false)
+  const { me, setMe } = useContext(AuthContext);
+  const history = useHistory();
+  
+  const onLogout = () => {
+   setMe(null);
+   logout(history, true);
+  };
 
 
 	return (
@@ -75,5 +85,6 @@ const NavBar = () => {
 }
 
 export default NavBar
+
 
 
