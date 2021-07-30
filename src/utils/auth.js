@@ -1,14 +1,14 @@
 import client from "./client";
-import Cookies from "js-cookie";
 
 const { REACT_APP_APP_NAME } = process.env;
 
-const getToken = () => Cookies.get(`${REACT_APP_APP_NAME}-auth-token`);
+const getToken = () => localStorage.getItem(`${REACT_APP_APP_NAME}_auth_token`);
 
 const setToken = (data) =>
-  Cookies.set(`${REACT_APP_APP_NAME}-auth-token`, data);
+  localStorage.setItem(`${REACT_APP_APP_NAME}_auth_token`, data);
 
-const removeToken = () => Cookies.remove(`${REACT_APP_APP_NAME}-auth-token`);
+const removeToken = () =>
+  localStorage.removeItem(`${REACT_APP_APP_NAME}_auth_token`);
 
 const logout = (history, forwordToLogin) => {
   removeToken();
