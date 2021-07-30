@@ -64,7 +64,7 @@ const SingleProduct = () => {
             <div className='w-md max-w-md m-2 px-1.5 rounded-default overflow-hidden border border-light shadow-md'>
             
             <div>
-                <p className="text-left pl-1 pb-3 pt-6   font-semibold text-3xl text-secondary">{singleProduct.title}</p>
+                <p className="pl-1 pb-3 pt-6 font-semibold text-3xl text-secondary">{singleProduct.title}</p>
                 <img className="rounded-default" src={singleProduct.media ? singleProduct.media[0].path : 'defaultProductPicture.jpeg'} alt='Productview'></img>
                 <div className="w-1/4 flex justify-start py-3 ml-1" >
                     {singleProduct.media && singleProduct.media.map(media => <img className='mr-2 rounded-default  hover:shadow cursor-pointer'src={media.path} key={media.id} alt='Productview'/>)}
