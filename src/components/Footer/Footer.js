@@ -1,6 +1,5 @@
 import React from 'react';
 //import './Footer.css';
-import { Link } from "react-router-dom";
 import { LogoTwitter24, LogoFacebook24, LogoInstagram24 } from '@carbon/icons-react'
 
 
@@ -51,13 +50,13 @@ const Footer = () => {
 								<p className="uppercase mb-4 font-bold text-3xl">JBM</p>
 								<ul className="mb-4 flex justify-center ">
 									<li className="mt-2">
-										<a href="#"	><LogoTwitter24 className="text-primary hover:opacity-75" /></a>
+										<a href="/#"	><LogoTwitter24 className="text-primary hover:opacity-75" /></a>
 									</li>
 									<li className="mt-2 px-4">
-										<a href="#" ><LogoFacebook24 className=" text-primary hover:opacity-75" /></a>
+										<a href="/#" ><LogoFacebook24 className=" text-primary hover:opacity-75" /></a>
 									</li>
 									<li className="mt-2">
-										<a href="#" ><LogoInstagram24 className="text-primary hover:opacity-75" /></a>
+										<a href="/#" ><LogoInstagram24 className="text-primary hover:opacity-75" /></a>
 									</li>
 								</ul>
 							</div>
@@ -66,19 +65,19 @@ const Footer = () => {
 								<ul className="mb-4">
 									<li className="mt-2">
 										<a
-											href="#"
+											href="/#"
 											className="hover:underline text-primary text-md hover:opacity-75"
 										>Order Status</a>
 									</li>
 									<li className="mt-2">
 										<a
-											href="#"
+											href="/#"
 											className="hover:underline text-primary text-md hover:opacity-75"
 										>Help</a>
 									</li>
 									<li className="mt-2">
 										<a
-											href="#"
+											href="/#"
 											className="hover:underline text-primary text-md hover:opacity-75"
 										>Support</a>
 									</li>
@@ -89,13 +88,13 @@ const Footer = () => {
 								<ul className="mb-4">
 									<li className="mt-2">
 										<a
-											href="#"
+											href="/#"
 											className="hover:underline text-primary text-md hover:opacity-75"
 										>Terms</a>
 									</li>
 									<li className="mt-2">
 										<a
-											href="#"
+											href="/#"
 											className="hover:underline text-primary text-md hover:opacity-75"
 										>Privacy</a>
 									</li>
@@ -106,19 +105,19 @@ const Footer = () => {
 								<ul className="mb-4">
 									<li className="mt-2">
 										<a
-											href="#"
+											href="/#"
 											className="hover:underline text-primary text-md hover:opacity-75"
 										>Phone Number</a>
 									</li>
 									<li className="mt-2">
 										<a
-											href="#"
+											href="/#"
 											className="hover:underline text-primary text-md hover:opacity-75"
 										>Email</a>
 									</li>
 									<li className="mt-2">
 										<a
-											href="#"
+											href="/#"
 											className="hover:underline text-primary text-md hover:opacity-75"
 										>Address</a>
 									</li>
