@@ -14,6 +14,7 @@ const Login = () => {
 
   const { setMe } = useContext(AuthContext);
   const history = useHistory();
+  console.log(history);
 
   const displayRegisterForm = () => {
     setDisplayLogin(false);
@@ -24,8 +25,7 @@ const Login = () => {
   const getContext = useCallback(async () => {
     const data = getUserContext(setMe);
     if (data) {
-      console.log("Push to root");
-      history.push("/");
+      history.goBack();
     }
   }, [history, setMe]);
 
