@@ -2,9 +2,17 @@ import React, { useContext } from "react";
 import "./styles.css";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
+import { logout } from "../../utils/auth";
+import { useHistory } from "react-router-dom";
 
 const NavBar = () => {
-  const { me } = useContext(AuthContext);
+  const { me, setMe } = useContext(AuthContext);
+  const history = useHistory();
+
+  const onLogout = () => {
+    setMe(null);
+    logout(history, true);
+  };
   return (
     <>
       <div className="navBar">
@@ -34,9 +42,9 @@ const NavBar = () => {
         </div>
         <span>
           {me ? (
-            <Link className="categorie_button" to="/logout">
+            <div className="categorie_button" onClick={onLogout}>
               Logout
-            </Link>
+            </div>
           ) : (
             <Link className="categorie_button" to="/login">
               Login

@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 
 import { login, getToken, getUserContext } from "../../utils/auth";
-import client from "../../utils/client";
 
 const LoginForm = ({ setDisplayLogin, setDisplayResetPassword }) => {
   const history = useHistory();

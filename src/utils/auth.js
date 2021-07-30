@@ -1,5 +1,6 @@
 import client from "./client";
 import Cookies from "js-cookie";
+import { useContext } from "react";
 
 const { REACT_APP_APP_NAME } = process.env;
 
@@ -10,9 +11,11 @@ const setToken = (data) =>
 
 const removeToken = () => Cookies.remove(`${REACT_APP_APP_NAME}-auth-token`);
 
-const logout = (history) => {
+const logout = (history, forwordToLogin) => {
   removeToken();
-  history.push("/login");
+  if (forwordToLogin) {
+    history.push("/login");
+  }
 };
 
 const login = async (credentials) => {

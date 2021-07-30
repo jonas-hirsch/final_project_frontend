@@ -11,18 +11,16 @@ import Contact from "./components/Contact/Contact";
 import Message from "./components/Message/Message";
 import ProductsCategory from "./components/Product/ProductsCategory";
 import Login from "./components/Auth/Login";
-import Logout from "./components/Auth/Logout";
 import AuthContext from "./context/AuthContext";
 import { getToken, getUserContext } from "./utils/auth";
 
 const App = () => {
   const [me, setMe] = useState();
 
-  useEffect(async () => {
-    if (!getToken()) {
-      return;
+  useEffect(() => {
+    if (getToken()) {
+      getUserContext(setMe);
     }
-    getUserContext(setMe);
   }, []);
 
   return (
@@ -51,9 +49,6 @@ const App = () => {
           </Route>
           <Route path="/login">
             <Login />
-          </Route>
-          <Route path="/logout">
-            <Logout />
           </Route>
           <Route path="/">
             <Home />
