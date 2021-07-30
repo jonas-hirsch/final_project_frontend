@@ -1,6 +1,5 @@
 import client from "./client";
 import Cookies from "js-cookie";
-import { useContext } from "react";
 
 const { REACT_APP_APP_NAME } = process.env;
 
@@ -19,10 +18,26 @@ const logout = (history, forwordToLogin) => {
 };
 
 const login = async (credentials) => {
-  console.log(credentials);
   try {
     const { headers } = await client.post("/auth/login", {
       ...credentials,
+    });
+    const token = headers["x-authorization-token"];
+    console.log(token);
+    if (token) {
+      setToken(token);
+
+      return true;
+    }
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const register = async (data) => {
+  try {
+    const { headers } = await client.post("/auth/register", {
+      ...data,
     });
     const token = headers["x-authorization-token"];
     console.log(token);
@@ -51,4 +66,4 @@ const getUserContext = async (setMe) => {
   }
 };
 
-export { login, setToken, getToken, logout, getUserContext };
+export { login, setToken, getToken, logout, getUserContext, register };

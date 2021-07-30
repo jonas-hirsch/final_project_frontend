@@ -1,19 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useCallback, useContext } from "react";
 import "./styles.css";
 import LoginForm from "./LoginForm";
 import ResetPasswordForm from "./ResetPasswordForm";
 import RegisterForm from "./RegisterForm";
+import { getUserContext } from "../../utils/auth";
+import AuthContext from "../../context/AuthContext";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const [displayLogin, setDisplayLogin] = useState(true);
   const [displayResetPassword, setDisplayResetPassword] = useState(false);
   const [displayResgisterForm, setDisplayResgisterForm] = useState(false);
 
+  const { setMe } = useContext(AuthContext);
+  const history = useHistory();
+
   const displayRegisterForm = () => {
     setDisplayLogin(false);
     setDisplayResetPassword(false);
     setDisplayResgisterForm(true);
   };
+
+  const getContext = useCallback(async () => {
+    const data = getUserContext(setMe);
+    if (data) {
+      console.log("Push to root");
+      history.push("/");
+    }
+  }, [history, setMe]);
+
   return (
     <>
       <h1>Welcome back</h1>
@@ -21,6 +36,7 @@ const Login = () => {
         <LoginForm
           setDisplayLogin={setDisplayLogin}
           setDisplayResetPassword={setDisplayResetPassword}
+          getContext={getContext}
         />
       )}
       {displayResetPassword && (
@@ -33,6 +49,7 @@ const Login = () => {
         <RegisterForm
           setDisplayLogin={setDisplayLogin}
           setDisplayResgisterForm={setDisplayResgisterForm}
+          getContext={getContext}
         />
       ) : (
         <>

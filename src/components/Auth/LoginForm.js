@@ -1,13 +1,11 @@
-import React, { useContext, useCallback, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import AuthContext from "../../context/AuthContext";
+import React, { useEffect } from "react";
+import { login, getToken } from "../../utils/auth";
 
-import { login, getToken, getUserContext } from "../../utils/auth";
-
-const LoginForm = ({ setDisplayLogin, setDisplayResetPassword }) => {
-  const history = useHistory();
-  const { setMe } = useContext(AuthContext);
-
+const LoginForm = ({
+  setDisplayLogin,
+  setDisplayResetPassword,
+  getContext,
+}) => {
   const performLogin = async (e) => {
     e.preventDefault();
 
@@ -22,14 +20,6 @@ const LoginForm = ({ setDisplayLogin, setDisplayResetPassword }) => {
       alert("Failed to login");
     }
   };
-
-  const getContext = useCallback(async () => {
-    const data = getUserContext(setMe);
-    if (data) {
-      console.log("Push to root");
-      history.push("/");
-    }
-  }, [history, setMe]);
 
   useEffect(() => {
     if (getToken()) {

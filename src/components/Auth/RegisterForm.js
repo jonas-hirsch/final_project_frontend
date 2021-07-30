@@ -1,13 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { register, getToken } from "../../utils/auth";
 
-const RegisterForm = ({ setDisplayLogin, setDisplayResgisterForm }) => {
-  const performLogin = (e) => {
+const RegisterForm = ({
+  setDisplayLogin,
+  setDisplayResgisterForm,
+  getContext,
+}) => {
+  const performRegister = async (e) => {
     e.preventDefault();
-    console.log(e.target.firstName.value);
-    console.log(e.target.lastName.value);
-    console.log(e.target.email.value);
-    console.log(e.target.password.value);
+
+    const isAuthenticated = await register({
+      email: e.target.email.value.trim().toLowerCase(),
+      password: e.target.password.value.trim(),
+      firstName: e.target.firstName.value,
+      lastName: e.target.lastName.value,
+    });
+    if (isAuthenticated) {
+      alert("Successfully registered");
+      getContext();
+    } else {
+      alert("Failed to login");
+    }
   };
+
+  useEffect(() => {
+    if (getToken()) {
+      getContext();
+    }
+  }, [getContext]);
+
   const backToLogin = () => {
     setDisplayLogin(true);
     setDisplayResgisterForm(false);
@@ -16,7 +37,7 @@ const RegisterForm = ({ setDisplayLogin, setDisplayResgisterForm }) => {
     <>
       <button onClick={backToLogin}>Back to login</button>
       <h1> I'm new in this shop</h1>
-      <form onSubmit={performLogin}>
+      <form onSubmit={performRegister}>
         <label htmlFor="firstName">First Name:</label>
         <br />
         <input type="text" name="firstName" placeholder="First Name" />
