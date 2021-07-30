@@ -1,29 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from "react-router-dom";
-import { Menu24, Home24, Email24, ShoppingBag24 } from '@carbon/icons-react';
+import AuthContext from "../../context/AuthContext";
+import {logout} from "../../utils/auth";
+import {useHistory} from "react-router-dom";
+import { Menu24, Home24, Email24, ShoppingBag24, ShoppingCart24 } from '@carbon/icons-react';
 
 
 const NavBar = () => {
 	const [isOpen, setIsOpen] = useState(false)
+  const { me, setMe } = useContext(AuthContext);
+  const history = useHistory();
+  
+  const onLogout = () => {
+   setMe(null);
+   logout(history, true);
+  };
 
 
 	return (
 		<>
-			{/* <div className="navBar">
-        <div>
-            <span><Link className="categorie_button"  to='/'>JBM</Link></span>
-        </div>
-        <div className='navBar_categorie'>
-            <span><Link className="categorie_button" to='/Home'>HOME</Link></span>
-            <span><Link className="categorie_button" to='/catalog'>CATALOG</Link></span>
-            <span><Link className="categorie_button" to='/contact'>CONTACT</Link></span>
-        </div>
-        <div className="navBar-links">
-            <span><Link className="categorie_button" to='/myCart'>Shopping Cart</Link></span>
-            <span><Link className="categorie_button" to='/myProfil'>Profile</Link></span>
-            <span><Link className="categorie_button" to='/myMessage'>Message</Link></span>
-        </div>
-    </div> */}
 			<div className='bg-transparent px-4 pt-2 pb-2 text-secondary'>
 				<nav className="relative flex flex-wrap items-center justify-between ">
 					<div className=" container px-3 mx-auto flex flex-wrap items-center justify-between">
@@ -71,6 +66,14 @@ const NavBar = () => {
 										</span>Contact
 									</Link>
 								</li>
+								<li className="nav-item">
+									<Link to="/myCart"
+										className="px-4 py-2 flex items-center text-md uppercase   hover:opacity-50"
+									><span>
+											<ShoppingCart24 className="mr-4" />
+										</span>Cart
+									</Link>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -82,5 +85,6 @@ const NavBar = () => {
 }
 
 export default NavBar
+
 
 
