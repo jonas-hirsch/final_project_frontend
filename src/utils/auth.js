@@ -23,11 +23,12 @@ const login = async (credentials) => {
       ...credentials,
     });
     const token = headers["x-authorization-token"];
+    const userId = headers["user-id"];
     console.log(token);
     if (token) {
       setToken(token);
 
-      return true;
+      return userId;
     }
   } catch (e) {
     console.log(e.message);
@@ -40,11 +41,12 @@ const register = async (data) => {
       ...data,
     });
     const token = headers["x-authorization-token"];
+    const userId = headers["user-id"];
     console.log(token);
     if (token) {
       setToken(token);
 
-      return true;
+      return userId;
     }
   } catch (e) {
     console.log(e.message);
