@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { login, getToken } from "../../utils/auth";
+import { transferLocalStorageToDatabase } from "../../utils/shoppingCart";
 
 const LoginForm = ({
   setDisplayLogin,
@@ -9,13 +10,14 @@ const LoginForm = ({
   const performLogin = async (e) => {
     e.preventDefault();
 
-    const isAuthenticated = await login({
+    const userId = await login({
       email: e.target.email.value,
       password: e.target.password.value,
     });
-    if (isAuthenticated) {
+    if (userId) {
       alert("Successfully loged in");
       getContext();
+      transferLocalStorageToDatabase(userId);
     } else {
       alert("Failed to login");
     }
