@@ -3,13 +3,35 @@ import client from "./client";
 const { REACT_APP_APP_NAME } = process.env;
 const localStorageName = `${REACT_APP_APP_NAME}-Shopping-Cart`;
 
-const addProductToCart = (stockId, amount) => {
-  const newCartItem = { stockId: parseInt(stockId), amount: amount };
-  const addToCart_serialized = JSON.stringify([newCartItem]);
+const addProductToCart = (me, stockId, amount) => {
+  const newCartItem = {
+    stockId: parseInt(stockId),
+    amount: amount,
+    user: me.id,
+  };
 
+  if (me) {
+    addProductToDatabase(newCartItem);
+  } else {
+    addProductToLocalStorage(stockId, newCartItem);
+  }
+};
+const addProductToDatabase = async (newCartItem) => {
+  try {
+    const postResult = await client.post(
+      `/shoppingCards/singleByStockId/${newCartItem.stockId}`,
+      newCartItem
+    );
+
+    console.log(postResult);
+  } catch (e) {
+    console.error(e.message);
+  }
+};
+const addProductToLocalStorage = (stockId, newCartItem) => {
   const cart = localStorage.getItem(localStorageName);
   if (!cart) {
-    localStorage.setItem(localStorageName, addToCart_serialized);
+    localStorage.setItem(localStorageName, JSON.stringify([newCartItem]));
   } else {
     const cartObj = JSON.parse(cart);
     console.log(cartObj);

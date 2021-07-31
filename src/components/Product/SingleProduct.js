@@ -1,12 +1,15 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./singleproduct.css";
 import { useParams } from "react-router-dom";
 import { addProductToCart } from "../../utils/shoppingCart";
+import AuthContext from "../../context/AuthContext";
 
 const SingleProduct = () => {
   const [singleProduct, setSingleProduct] = useState();
   const [stockId, setStockId] = useState();
+
+  const { me } = useContext(AuthContext);
 
   const { id } = useParams();
 
@@ -33,7 +36,7 @@ const SingleProduct = () => {
 
   const addToCart = () => {
     let amount = 1;
-    addProductToCart(parseInt(stockId), amount);
+    addProductToCart(me, parseInt(stockId), amount);
   };
 
   if (!singleProduct) return <span>Loading...</span>;
