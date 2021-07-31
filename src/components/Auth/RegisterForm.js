@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { register, getToken } from "../../utils/auth";
+import { transferLocalStorageToDatabase } from "../../utils/shoppingCart";
 
 const RegisterForm = ({
   setDisplayLogin,
@@ -9,15 +10,16 @@ const RegisterForm = ({
   const performRegister = async (e) => {
     e.preventDefault();
 
-    const isAuthenticated = await register({
+    const userId = await register({
       email: e.target.email.value.trim().toLowerCase(),
       password: e.target.password.value.trim(),
       firstName: e.target.firstName.value,
       lastName: e.target.lastName.value,
     });
-    if (isAuthenticated) {
+    if (userId) {
       alert("Successfully registered");
       getContext();
+      transferLocalStorageToDatabase(userId);
     } else {
       alert("Failed to login");
     }
