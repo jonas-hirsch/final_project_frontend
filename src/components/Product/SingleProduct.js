@@ -86,7 +86,7 @@ const SingleProduct = () => {
                     </span>
                     </p>
                     <p className="font-normal text-body">Price:
-                    <span className="pl-12 pr-2 font-semibold text-secondary">{singleProduct.stock[0].price}</span></p>
+                    <span className="pl-12 pr-2 font-semibold text-secondary">{singleProduct && singleProduct.stock && singleProduct.stock[0].price}</span></p>
                 </div>
                 <div className="text-left my-2.5 pb-2">
                     <p className="py-1.5 text-xl font-semibold text-secondary">Description: </p>

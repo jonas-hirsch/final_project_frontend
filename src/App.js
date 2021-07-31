@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Products from "./components/Product/Products";
+// import Products from "./components/Product/Products";
 import Home from "./components/Home/Home";
 import NavBar from "./components/NavBar/NavBar";
 import SingleProduct from "./components/Product/SingleProduct";
@@ -31,9 +31,7 @@ const App = () => {
         <NavBar />
 
         <Switch>
-          <Route path="/catalog/category/:id">
-            <ProductsCategory />
-          </Route>
+          
           <Route path="/mymessage">
             <Message />
           </Route>
@@ -47,7 +45,7 @@ const App = () => {
             <SingleProduct />
           </Route>
           <Route path="/catalog">
-            <Products />
+            <ProductsCategory/>
           </Route>
           <Route path="/login">
             <Login />
