@@ -57,7 +57,7 @@ const getShoppingCartItems = async (me) => {
   const chartItems = [];
   let cart;
   if (me) {
-    const { data } = await client.get(`/shoppingCards/user/${me.id}`);
+    const { data } = await client.get(`/shoppingCards/user/price/${me.id}`);
     cart = data;
     for (const item of cart) {
       const product = await client.get(`/products/${item.product}`);
@@ -68,6 +68,7 @@ const getShoppingCartItems = async (me) => {
         size: item.size,
         color: item.color,
         price: item.price,
+        media: product.data.media,
       };
       chartItems.push(chartItem);
     }
@@ -85,10 +86,12 @@ const getShoppingCartItems = async (me) => {
         size: data.size,
         color: data.color,
         price: data.price,
+        media: data.media,
       };
       chartItems.push(chartItem);
     }
   }
+  console.log(chartItems);
   return chartItems;
 };
 
