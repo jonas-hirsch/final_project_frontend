@@ -6,6 +6,7 @@ import { useHistory, useParams } from "react-router-dom";
 import CategoryNavTab from "./CategoryNavTab";
 import client from "../../utils/client";
 
+
 const ProductsCategory = () => {
   const history = useHistory();
 
@@ -58,16 +59,15 @@ const ProductsCategory = () => {
             ))}
           </ul>
           <div className="relative flex flex-col min-w-0 break-words w-full mb-6 text-left shadow-sm">
-            <div className="px-4 py-5 flex-auto">
-              <div className="tabs-content">
+            <div className="px-4 py-5"  >
+              <div className="tabs-content" >
                 <div id="link1">
                   <div className="text-md text-body">
-                    <div className="flex flex-col justify-center items-center">
+                    <div className="flex text-center justify-around flex-wrap">
                       {products.map((product) => {
                         return (
-                          <div key={product.id}>
-                            <div
-                              className="rounded-default shadow-lg my-2 mx-2 w-full lg:w-1/3 overflow-hidden pb-3 hover:shadow-xl"
+                          <div
+                              className="justify-center align-center  rounded-default shadow-lg my-2 mx-2 w-full md:w-1/3 md:overflow-hidden pb-3 hover:shadow-xl lg:w-1/4 overflow-hidden pb-3 hover:shadow-xl "
                               key={product.id}
                               id="container"
                             >
@@ -89,7 +89,7 @@ const ProductsCategory = () => {
                                 <p className="text-left text-xl text-secondary font-normal tracking-wide py-1">
                                   {product.title}
                                 </p>
-                                <div
+                                <span
                                   style={{
                                     display: "flex",
                                     justifyContent: "space-between",
@@ -106,7 +106,7 @@ const ProductsCategory = () => {
                                       <Add24 />
                                     </button>{" "}
                                   </Link>
-                                </div>
+                                </span>
                                 <button
                                   onClick={() =>
                                     history.push("/catalog/" + product.id)
@@ -117,7 +117,6 @@ const ProductsCategory = () => {
                                 </button>
                               </div>
                             </div>
-                          </div>
                         );
                       })}
                     </div>
