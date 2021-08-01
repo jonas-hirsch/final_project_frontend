@@ -45,7 +45,7 @@ const ProductsCategory = () => {
   return (
     <>
       <div className="tabs flex flex-wrap">
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-full">
           <ul className="flex flex-wrap pt-3 pb-2 flex-row" role="tablist">
             {categories.map((category, index, array) => (
               <CategoryNavTab
@@ -65,9 +65,9 @@ const ProductsCategory = () => {
                     <div className="flex flex-col justify-center items-center">
                       {products.map((product) => {
                         return (
-                          <div>
+                          <div key={product.id}>
                             <div
-                              className="rounded-default shadow-lg my-2 mx-2 w-1/2 lg:w-1/3 overflow-hidden pb-3 hover:shadow-xl"
+                              className="rounded-default shadow-lg my-2 mx-2 w-full lg:w-1/3 overflow-hidden pb-3 hover:shadow-xl"
                               key={product.id}
                               id="container"
                             >
