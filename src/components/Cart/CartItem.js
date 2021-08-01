@@ -1,7 +1,7 @@
 import React from "react";
 import { Close24 } from "@carbon/icons-react";
 
-const CartItem = ({ title, quantity }) => {
+const CartItem = ({ cartItem }) => {
   return (
     <div className="divide-y divide-gray-700 border border-light w-md max-w-md rounded-default">
       <div className="m-2 w-md max-w-md p-2 rounded-default">
@@ -14,7 +14,7 @@ const CartItem = ({ title, quantity }) => {
           <div className="flex flex-col justify-between py-0.5 w-full">
             <div className="flex justify-between">
               <p className="text-left text-secondary text-2xl font-semibold">
-                {title}
+                {cartItem.title}
               </p>
               <button>
                 <Close24 className="active:text-danger " />
@@ -26,7 +26,7 @@ const CartItem = ({ title, quantity }) => {
                 <span className="pl-6 ">
                   <button className="font-semibold text-2xl">- &nbsp;</button>
                   <button className="font-semibold text-2xl">
-                    {quantity} &nbsp;
+                    {cartItem.quantity} &nbsp;
                   </button>
                   <button className="font-semibold text-2xl">+ &nbsp;</button>
                 </span>

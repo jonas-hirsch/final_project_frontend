@@ -1,7 +1,7 @@
 import React from "react";
 import CartItem from "./CartItem";
 
-const CartTab = ({ openTab, cartIndex }) => {
+const CartTab = ({ openTab, cartIndex, cartItems }) => {
   return (
     <div className={openTab === cartIndex + 1 ? "block" : "hidden"} id="link1">
       <div className="text-md text-body">
@@ -9,8 +9,7 @@ const CartTab = ({ openTab, cartIndex }) => {
           <h3>Cart</h3>
         </div>
       </div>
-      <CartItem title={"First product"} quantity={1} />
-      <CartItem title={"Second product"} quantity={2} />
+      {cartItems && cartItems.map((item) => <CartItem cartItem={item} />)}
       <div className="px-1 pb-2 pt-4 mx-auto text-center">
         <button
           className="bg-secondary text-primary font-regular py-2.5 px-6 rounded-default text-xl shadow-xl active:bg-s-hover my-2 w-full"

@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import TabNavigationItem from "./TabNavigationItem";
 import "./Cart.css";
 import PaymentTab from "./PaymentTab";
 import ShippingTab from "./ShippingTab";
 import CartTab from "./CartTab";
+import { getShoppingCartItems } from "../../utils/shoppingCart";
+import AuthContext from "../../context/AuthContext";
 
 const tabItems = ["1. Cart", "2. Shipping", "3. Payment"];
 
 const Cart = () => {
   const [openTab, setOpenTab] = useState(1);
+  const [cartItems, setCartItems] = useState([]);
+  const { me } = useContext(AuthContext);
+
+  useEffect(async () => {
+    const cart = await getShoppingCartItems(me);
+    setCartItems(cart);
+  }, []);
 
   return (
     <>
@@ -30,7 +39,11 @@ const Cart = () => {
           <div className="relative flex flex-col min-w-0 break-words w-full mb-6 text-left shadow-sm">
             <div className="px-4 py-5 flex-auto">
               <div className="tabs-content">
-                <CartTab openTab={openTab} cartIndex={0} />
+                <CartTab
+                  openTab={openTab}
+                  cartIndex={0}
+                  cartItems={cartItems}
+                />
                 <ShippingTab openTab={openTab} cartIndex={1} />
                 <PaymentTab openTab={openTab} cartIndex={2} />
               </div>
