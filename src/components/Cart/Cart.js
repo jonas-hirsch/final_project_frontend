@@ -17,11 +17,6 @@ const Cart = () => {
   useEffect(async () => {
     const cart = await getShoppingCartItems(me);
     setCartItems(cart);
-  }, []);
-
-  useEffect(async () => {
-    const cart = await getShoppingCartItems(me);
-    setCartItems(cart);
   }, [me]);
 
   const deleteCartItem = (cartItem) => {

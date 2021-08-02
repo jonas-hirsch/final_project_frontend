@@ -17,9 +17,8 @@ const LoginForm = ({
       password: e.target.password.value,
     });
     if (userId) {
+      await transferLocalStorageToDatabase(userId);
       getContext();
-      transferLocalStorageToDatabase(userId);
-      console.log("Successfully logged in");
     } else {
       toast.error("Wrong credentials: Failed to login", {
         position: "top-center",
