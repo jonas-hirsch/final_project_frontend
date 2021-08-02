@@ -78,6 +78,7 @@ const getShoppingCartItems = async (me) => {
     data = JSON.parse(data);
     for (const item of data) {
       const { data } = await client.get(`/products/stock/id/${item.stockId}`);
+      console.log({ data });
 
       const chartItem = {
         id: item.stockId,
@@ -159,6 +160,8 @@ const updateShoppingCartItem = async (shoppingCartItem, me) => {
     }
     console.log({ localStorageCart: localStorageCart });
     localStorage.setItem(localStorageName, JSON.stringify(localStorageCart));
+
+    return true;
   }
 };
 
