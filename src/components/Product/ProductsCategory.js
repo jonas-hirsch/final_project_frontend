@@ -69,7 +69,7 @@ const ProductsCategory = () => {
                       {products.map((product) => {
                         return (
                           <div
-                              className="justify-center align-center  rounded-default shadow-lg my-2 mx-2 w-full md:w-1/3 md:overflow-hidden pb-3 hover:shadow-xl lg:w-1/4 overflow-hidden pb-3 hover:shadow-xl "
+                              className="justify-center align-center  rounded-default shadow-lg my-5 mx-2 w-full md:w-1/3 md:overflow-hidden pb-3 hover:shadow-xl lg:w-1/4 overflow-hidden pb-3 hover:shadow-xl "
                               key={product.id}
                               id="container"
                             >
@@ -77,7 +77,7 @@ const ProductsCategory = () => {
                                 className="w-full"
                                 style={{
                                   width: "100%",
-                                  marginBottom: "-60px",
+                                  marginBottom: "-50px",
                                   marginTop: "-40px",
                                 }}
                                 src={
@@ -88,7 +88,7 @@ const ProductsCategory = () => {
                                 alt="Productview"
                               ></img>
                               <div className="px-4 pt-3 text-secondary">
-                                <p className="text-left text-xl text-secondary font-normal tracking-wide py-1">
+                                <p className="text-left text-xl text-secondary font-normal tracking-wide">
                                   {product.title}
                                 </p>
                                 <span
