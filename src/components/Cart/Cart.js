@@ -19,6 +19,10 @@ const Cart = () => {
     setCartItems(cart);
   }, []);
 
+  const deleteCartItem = (cartItem) => {
+    setCartItems((prev) => prev.filter((item) => item.id !== cartItem.id));
+  };
+
   return (
     <>
       <div
@@ -43,7 +47,9 @@ const Cart = () => {
                   openTab={openTab}
                   cartIndex={0}
                   cartItems={cartItems}
+                  deleteCartItem={deleteCartItem}
                   setOpenTab={setOpenTab}
+                  me={me}
                 />
                 <ShippingTab
                   openTab={openTab}

@@ -1,7 +1,13 @@
 import React from "react";
 import CartItem from "./CartItem";
 
-const CartTab = ({ openTab, cartIndex, cartItems, setOpenTab }) => {
+const CartTab = ({
+  openTab,
+  cartIndex,
+  cartItems,
+  deleteCartItem,
+  setOpenTab,
+}) => {
   const openShippingTab = () => {
     setOpenTab(2);
     window.scrollTo(0, 0);
@@ -13,7 +19,10 @@ const CartTab = ({ openTab, cartIndex, cartItems, setOpenTab }) => {
           <h3>Cart</h3>
         </div>
       </div>
-      {cartItems && cartItems.map((item) => <CartItem cartItem={item} />)}
+      {cartItems &&
+        cartItems.map((item) => (
+          <CartItem cartItem={item} deleteCartItem={deleteCartItem} />
+        ))}
       <div className="px-1 pb-2 pt-4 mx-auto text-center">
         <button
           className="bg-secondary text-primary font-regular py-2.5 px-6 rounded-default text-xl shadow-xl active:bg-s-hover my-2 w-full"
