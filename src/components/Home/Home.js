@@ -9,8 +9,8 @@ const Home = () => {
     return (
         <div className=''>
             <div className=" w-full mb-20 max-w-full h-auto">
-                <div className="text-left" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1545486332-9e0999c535b2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2t8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=60)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '60vh' }}>
-                    <div className="px-4 md:px-20 py-40  text-primary">
+                <div className="text-left" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1545486332-9e0999c535b2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2t8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=60)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '70vh' }}>
+                    <div className="pt-24 px-4 text-primary md:ml-20 lg:ml-20">
                         <p className="text-5xl font-bold mb-2">Lorem ipsum dolor sit amet.</p>
                         <p className="text-xl mb-20 text-disabled w-full md:w-1/2 ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum a quisquam animi nam asperiores fugit nulla harum pariatur qui repellendus.</p>
                         <button onClick={() => history.push('/catalog')} className='bg-white text-secondary font-regular py-2.5 px-6 rounded-default text-2xl shadow-xl active:bg-white active:text-secondary mb-14'>Shop now</button>
@@ -60,7 +60,7 @@ const Home = () => {
             {/* Hero */}
             <div className=" w-full max-w-full">
                 <div className="text-left" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1545486332-9e0999c535b2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2t8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=60)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '60vh' }}>
-                    <div className="px-4 md:px-20 py-40 text-primary">
+                    <div className="pt-20 px-4 text-primary md:ml-20 lg:ml-20">
                         <p className="text-5xl font-bold mb-2">Lorem ipsum dolor sit amet.</p>
                         <p className=" text-xl mb-20 text-disabled w-full md:w-1/2 ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum a quisquam animi nam asperiores fugit nulla harum pariatur qui repellendus.</p>
                         <button onClick={() => history.push('/catalog')} className='bg-white text-secondary font-regular py-2.5 px-6 rounded-default text-2xl shadow-xl active:bg-white active:text-secondary mb-14'>Shop now</button>
