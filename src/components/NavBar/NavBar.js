@@ -9,6 +9,8 @@ import {
   Email24,
   ShoppingBag24,
   ShoppingCart24,
+  Login24,
+  Logout24
 } from "@carbon/icons-react";
 
 const NavBar = () => {
@@ -23,16 +25,33 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="bg-transparent px-4 pt-2 pb-2 text-secondary">
-        <nav className="relative flex flex-wrap items-center justify-between ">
+      <div className="bg-transparent pt-2 pb-2 text-secondary ">
+        <nav className="relative flex-wrap flex items-center justify-between ">
           <div className=" container px-3 mx-auto flex flex-wrap items-center justify-between">
-            <div className="w-full text-left relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+            <div className="w-full text-left relative flex items-center justify-between lg:w-auto lg:static lg:block lg:justify-start">
+
               <Link
                 to="/"
                 className="text-2xl font-semibold inline-block mr-4 py-2"
               >
                 JBM
               </Link>
+
+              {/* Login & Logout */}
+              <div className=" absolute right-14 lg:hidden">
+                {me ? (
+                  <div className="categorie_button" onClick={onLogout}>
+                    <div className="flex uppercase hover:opacity-50">
+                    <Logout24 className="mr-4" />Logout
+                    </div>
+                    
+                  </div>
+                ) : (
+                  <Link className="categorie_button" to="/login">
+                    <div className="flex uppercase hover:opacity-50"><Login24 className="mr-2" />login</div>
+                  </Link>
+                )}
+              </div>
               <button
                 className=" text-xl px-2 py-1 block lg:hidden outline-none focus:outline-none"
                 type="button"
@@ -40,22 +59,16 @@ const NavBar = () => {
               >
                 <Menu24 />
               </button>
+
             </div>
-            {me ? (
-              <span className="categorie_button" onClick={onLogout}>
-                Logout
-              </span>
-            ) : (
-              <Link className="categorie_button" to="/login">
-                <span>Login</span>
-              </Link>
-            )}
+
+
             <div
-              className={`lg:flex flex-grow items-center ${
-                isOpen ? "flex items-center justify-between" : "hidden flex-row"
-              }`}
+              className={`lg:flex flex-grow items-center ${isOpen ? "flex items-center justify-between" : "hidden flex-row"
+                }`}
             >
-              <ul className="flex flex-row list-none items-start lg:flex-row  lg:ml-auto">
+              <ul className="flex flex-row flex-wrap list-none items-start lg:flex-row  lg:ml-auto">
+             
                 <li className="nav-item">
                   <Link
                     to="/"
@@ -100,6 +113,22 @@ const NavBar = () => {
                     </span>
                     Cart
                   </Link>
+                </li>
+                <li className="nav_item invisible lg:visible">
+                  <div className="relative px-4 py-2" >
+                    {me ? (
+                      <div className="categorie_button" onClick={onLogout}>
+                        <div className="hover:opacity-50 flex uppercase">
+                          <Logout24 className="mr-4 " />Logout
+                        </div>
+
+                      </div>
+                    ) : (
+                      <Link className="categorie_button" to="/login">
+                        <div className="flex uppercase hover:opacity-50"><Login24 className="mr-4" />Login</div>
+                      </Link>
+                    )}
+                  </div>
                 </li>
               </ul>
             </div>

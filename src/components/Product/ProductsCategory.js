@@ -16,7 +16,9 @@ const ProductsCategory = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    client.get("/categories").then(({ data }) => setCategories(data));
+    client.get("/categories")
+    .then(({ data }) => setCategories(data))
+    .catch(err => console.log(err));
   }, []);
 
   useEffect(() => {
