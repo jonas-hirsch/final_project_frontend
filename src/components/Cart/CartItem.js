@@ -1,16 +1,46 @@
 import React, { useContext } from "react";
 import { Close24 } from "@carbon/icons-react";
-import { deleteShoppingCardItem } from "../../utils/shoppingCart";
+import {
+  deleteShoppingCardItem,
+  updateShoppingCartItem,
+} from "../../utils/shoppingCart";
 import AuthContext from "../../context/AuthContext";
 
-const CartItem = ({ cartItem, deleteCartItem }) => {
-  console.log(cartItem);
+const CartItem = ({ cartItem, deleteCartItem, cartItems, setCartItems }) => {
   const { me } = useContext(AuthContext);
   const deleteItem = async () => {
     const deleted = deleteShoppingCardItem(me, cartItem.id);
     if (deleted) {
       deleteCartItem(cartItem);
     }
+  };
+
+  const handleChangeQuantity = async (cartItem, deltaValue) => {
+    const targetItem = { ...cartItem };
+    targetItem.quantity += deltaValue;
+
+    if (targetItem.quantity < 0) {
+      return;
+    }
+
+    changeState(targetItem, setCartItems);
+
+    const ok = await updateShoppingCartItem(targetItem, me);
+    if (!ok) {
+      targetItem.quantity -= deltaValue;
+      changeState(targetItem, setCartItems);
+    }
+  };
+
+  const changeState = (targetItem, setCartItems) => {
+    console.log({ targetItem });
+    setCartItems((prevCartItems) => {
+      console.log({ prevCartItems });
+      return [
+        ...prevCartItems.filter((item) => item.id !== targetItem.id),
+        targetItem,
+      ];
+    });
   };
 
   return (
@@ -35,11 +65,21 @@ const CartItem = ({ cartItem, deleteCartItem }) => {
               <p className="flex justify-start w-full">
                 <span className="font-regular text-md">Quantity: &nbsp;</span>{" "}
                 <span className="pl-6 ">
-                  <button className="font-semibold text-2xl">- &nbsp;</button>
+                  <button
+                    className="font-semibold text-2xl"
+                    onClick={() => handleChangeQuantity(cartItem, -1)}
+                  >
+                    - &nbsp;
+                  </button>
                   <button className="font-semibold text-2xl">
                     {cartItem.quantity} &nbsp;
                   </button>
-                  <button className="font-semibold text-2xl">+ &nbsp;</button>
+                  <button
+                    className="font-semibold text-2xl"
+                    onClick={() => handleChangeQuantity(cartItem, 1)}
+                  >
+                    + &nbsp;
+                  </button>
                 </span>
               </p>
             </div>
