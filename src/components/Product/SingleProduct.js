@@ -1,13 +1,15 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./singleproduct.css";
 import { useParams } from "react-router-dom";
+import { addProductToCart } from "../../utils/shoppingCart";
+import AuthContext from "../../context/AuthContext";
 
 const SingleProduct = () => {
   const [singleProduct, setSingleProduct] = useState();
   const [stockId, setStockId] = useState();
-
   const { id } = useParams();
+  const { me } = useContext(AuthContext);
 
   console.log(id);
 
@@ -31,30 +33,7 @@ const SingleProduct = () => {
   };
 
   const addToCart = () => {
-    const newCartItem = { stockId: parseInt(stockId), amount: 1 };
-    const addToCart_serialized = JSON.stringify([newCartItem]);
-    console.log(addToCart_serialized);
-    let cart = localStorage.getItem("Cart");
-    if (!cart) {
-      localStorage.setItem("Cart", addToCart_serialized);
-    } else {
-      const cartObj = JSON.parse(cart);
-      console.log(cartObj);
-      const currentObj = cartObj.find(
-        (singleCartObj) => singleCartObj.stockId === parseInt(stockId)
-      );
-      if (currentObj) {
-        cartObj.forEach((singleCartObj) => {
-          if (singleCartObj.stockId === parseInt(stockId)) {
-            singleCartObj.amount = singleCartObj.amount + 1;
-          }
-        });
-      } else {
-        cartObj.push(newCartItem);
-      }
-      const serializedCart = JSON.stringify(cartObj);
-      localStorage.setItem("Cart", serializedCart);
-    }
+    addProductToCart(stockId, 1, me);
   };
 
   if (!singleProduct) return <span>Loading...</span>;
