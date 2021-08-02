@@ -5,24 +5,25 @@ import { useHistory } from "react-router-dom";
 const Home = () => {
 
     const history = useHistory();
+    
 
     return (
         <div className=''>
-            <div className=" w-full mb-20 max-w-full h-auto">
-                <div className="text-left" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1545486332-9e0999c535b2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2t8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=60)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '70vh' }}>
+            <div className=" w-full mb-20 max-w-full h-auto text-center justify-center">
+                <div className="" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1468421870903-4df1664ac249?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1789&q=80)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '70vh' }}>
                     <div className="pt-24 px-4 text-primary md:ml-20 lg:ml-20">
-                        <p className="text-5xl font-bold mb-2">Lorem ipsum dolor sit amet.</p>
-                        <p className="text-xl mb-20 text-disabled w-full md:w-1/2 ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum a quisquam animi nam asperiores fugit nulla harum pariatur qui repellendus.</p>
+                        {/* <p className=" heading1 text-5xl font-bold mb-2">CODE MEANS THE WORLD TO US</p> */}
+                        {/* <p className="text-xl mb-20 text-disabled w-full md:w-1/2 ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum a quisquam animi nam asperiores fugit nulla harum pariatur qui repellendus.</p> */}
                         <button onClick={() => history.push('/catalog')} className='bg-white text-secondary font-regular py-2.5 px-6 rounded-default text-2xl shadow-xl active:bg-white active:text-secondary mb-14'>Shop now</button>
                     </div>
                 </div>
             </div>
             <div>
             </div>
-            <div className="mb-10 pl-4 md:ml-30 md:px-20 flex flex-col ">
+            <div className="mb-10 pl-4 md:ml-30 md:px-20 flex flex-col md:text-center">
                 <span className="text-4xl text-secondary font-semibold">Discover</span>
                 <span className="text-xl font-normal text-body"
-                >Lorem ipsum dolor sit amet.</span>
+                >ENJOY WITH LOVE</span>
             </div>
 
             <div className="px-4 mb-28">
@@ -30,14 +31,14 @@ const Home = () => {
                     {/* Extra Wish */}
                     <div className="rounded-default relative w-full lg:w-1/3 overflow-hidden pb-3">
                         <button onClick={() => history.push('/catalog')} >
-                            <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTJ8fHBlb3BsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=60" alt='Example' className='w-full rounded-default' />
-                            <span><p className=" absolute text-4xl text-secondary font-semibold tracking-wide bottom-6 ">Joane Doe  &#8594;</p></span>
+                            <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2766&q=80" alt='Example' className='w-full rounded-default' />
+                            <span><p className=" m-2 absolute text-4xl text-secondary font-semibold tracking-wide bottom-6 ">HOODIE'S  &#8594;</p></span>
                         </button>
                     </div>
                     <div className="rounded-default relative w-full lg:w-1/3 overflow-hidden pb-3">
                         <button onClick={() => history.push('/catalog')} >
-                            <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTJ8fHBlb3BsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=60" alt='Example' className='w-full rounded-default' />
-                            <span><p className=" absolute text-4xl text-secondary font-semibold tracking-wide bottom-6 ">Joane Doe  &#8594;</p></span>
+                            <img src="https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1266&q=80" alt='Example' className='w-full rounded-default' />
+                            <span><p className="m-2 absolute text-4xl text-secondary font-semibold tracking-wide bottom-6 ">SHIRTS  &#8594;</p></span>
                         </button>
                     </div>
                 </div>
@@ -45,24 +46,24 @@ const Home = () => {
                 <div className="rounded-default category-wrapper sm:w-full md:flex items-center justify-center md:space-x-6">
                     <div className="rounded-default relative w-full lg:w-1/3 overflow-hidden pb-3">
                         <button onClick={() => history.push('/catalog')} >
-                            <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTJ8fHBlb3BsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=60" alt='Example' className='w-full rounded-default' />
-                            <span><p className=" absolute text-4xl text-secondary font-semibold tracking-wide bottom-6 ">Joane Doe  &#8594;</p></span>
+                            <img src="https://images.unsplash.com/photo-1602632066350-4206c806ebdb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80" alt='Example' className='w-full rounded-default' />
+                            <span><p className="m-2 absolute text-4xl text-secondary font-semibold tracking-wide bottom-6 ">GEAR  &#8594;</p></span>
                         </button>
                     </div>
                     <div className="rounded-default relative w-full lg:w-1/3 overflow-hidden pb-3">
                         <button onClick={() => history.push('/catalog')} >
-                            <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTJ8fHBlb3BsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=60" alt='Example' className='w-full rounded-default' />
-                            <span><p className=" absolute text-4xl text-secondary font-semibold tracking-wide bottom-6 ">Joane Doe  &#8594;</p></span>
+                            <img src="https://images.unsplash.com/photo-1484239398315-f1681ef72fe6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80" alt='Example' className='w-full rounded-default' />
+                            <span><p className="m-2 absolute text-4xl text-secondary font-semibold tracking-wide bottom-6 ">STICKER  &#8594;</p></span>
                         </button>
                     </div>
                 </div>
             </div>
             {/* Hero */}
             <div className=" w-full max-w-full">
-                <div className="text-left" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1545486332-9e0999c535b2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2t8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=60)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '60vh' }}>
-                    <div className="pt-20 px-4 text-primary md:ml-20 lg:ml-20">
-                        <p className="text-5xl font-bold mb-2">Lorem ipsum dolor sit amet.</p>
-                        <p className=" text-xl mb-20 text-disabled w-full md:w-1/2 ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum a quisquam animi nam asperiores fugit nulla harum pariatur qui repellendus.</p>
+                <div className="text-left" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1622676666769-1a0407cf10a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '60vh' }}>
+                    <div className="heading1 text-center justify-center pt-20 px-4 text-primary md:ml-20 lg:ml-20">
+                        <h2 className="text-5xl font-bold mb-2">EAT.CODE.SLEEP.REPEAT</h2>
+                        <p className=" text-xl mb-20 text-disabled w-full md:w-1/2 "></p>
                         <button onClick={() => history.push('/catalog')} className='bg-white text-secondary font-regular py-2.5 px-6 rounded-default text-2xl shadow-xl active:bg-white active:text-secondary mb-14'>Shop now</button>
                     </div>
                 </div>
