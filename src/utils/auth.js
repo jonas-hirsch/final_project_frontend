@@ -31,7 +31,7 @@ const login = async (credentials) => {
       return userId;
     }
   } catch (e) {
-    console.log(e.message);
+    console.error(e.message);
   }
 };
 

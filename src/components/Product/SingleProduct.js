@@ -8,12 +8,8 @@ import AuthContext from "../../context/AuthContext";
 const SingleProduct = () => {
   const [singleProduct, setSingleProduct] = useState();
   const [stockId, setStockId] = useState();
-  const { me } = useContext(AuthContext);
-
-  const [singleProduct, setSingleProduct] = useState();
-  const [stockId, setStockId] = useState();
-
   const { id } = useParams();
+  const { me } = useContext(AuthContext);
 
   console.log(id);
 

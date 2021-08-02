@@ -3,14 +3,15 @@ import client from "./client";
 const { REACT_APP_APP_NAME } = process.env;
 const localStorageName = `${REACT_APP_APP_NAME}-Shopping-Cart`;
 
-const addProductToCart = (me, stockId, amount) => {
+const addProductToCart = (stockId, amount, me) => {
   const newCartItem = {
     stockId: parseInt(stockId),
     amount: amount,
-    user: me.id,
   };
 
+  console.log(me);
   if (me) {
+    newCartItem.user = me.id;
     addProductToDatabase(newCartItem);
   } else {
     addProductToLocalStorage(stockId, newCartItem);
@@ -53,9 +54,65 @@ const addProductToLocalStorage = (stockId, newCartItem) => {
   }
 };
 
+const getShoppingCartItems = async (me) => {
+  const chartItems = [];
+  if (me) {
+    const { data } = await client.get(`/shoppingCards/user/price/${me.id}`);
+    for (const item of data) {
+      const product = await client.get(`/products/${item.product}`);
+      item.product = product;
+      const chartItem = {
+        id: item.id,
+        title: product.data.title,
+        quantity: item.amount,
+        size: item.size,
+        color: item.color,
+        price: item.price,
+        media: product.data.media,
+      };
+      chartItems.push(chartItem);
+    }
+  } else {
+    let data = localStorage.getItem(localStorageName);
+    if (!data) return [];
+    data = JSON.parse(data);
+    for (const item of data) {
+      const { data } = await client.get(`/products/stock/id/${item.stockId}`);
+
+      const chartItem = {
+        id: item.stockId,
+        title: data.title,
+        quantity: item.amount,
+        size: data.size,
+        color: data.color,
+        price: data.price,
+        media: data.media,
+      };
+      chartItems.push(chartItem);
+    }
+  }
+  console.log(chartItems);
+  return chartItems;
+};
+
+const deleteShoppingCardItem = async (me, id) => {
+  if (me) {
+    try {
+      const result = await client.delete(`/shoppingCards/deleteSingle/${id}`);
+      console.log({ result: result.status });
+      return result.status < 300;
+    } catch (error) {
+      console.error(error);
+    }
+  } else {
+    console.log("Delete cart item from local storage");
+    let localStorageCart = JSON.parse(localStorage.getItem(localStorageName));
+    localStorageCart = localStorageCart.filter((item) => item.stockId !== id);
+    localStorage.setItem(localStorageName, JSON.stringify(localStorageCart));
+  }
+};
+
 const transferLocalStorageToDatabase = async (userId) => {
-  console.log("userId:");
-  console.log(userId);
   const localStorageCart = JSON.parse(localStorage.getItem(localStorageName));
   if (!localStorageCart) {
     return;
@@ -74,4 +131,9 @@ const transferLocalStorageToDatabase = async (userId) => {
   }
 };
 
-export { addProductToCart, transferLocalStorageToDatabase };
+export {
+  addProductToCart,
+  transferLocalStorageToDatabase,
+  getShoppingCartItems,
+  deleteShoppingCardItem,
+};
