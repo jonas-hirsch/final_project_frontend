@@ -33,6 +33,7 @@ const Cart = () => {
           <ul className="flex flex-wrap pt-3 pb-2 flex-row" role="tablist">
             {tabItems.map((item, index) => (
               <TabNavigationItem
+                key={index}
                 cartName={item}
                 index={index}
                 openTab={openTab}
@@ -50,6 +51,7 @@ const Cart = () => {
                   deleteCartItem={deleteCartItem}
                   setOpenTab={setOpenTab}
                   me={me}
+                  setCartItems={setCartItems}
                 />
                 <ShippingTab
                   openTab={openTab}
