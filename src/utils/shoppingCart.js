@@ -53,6 +53,48 @@ const addProductToLocalStorage = (stockId, newCartItem) => {
   }
 };
 
+const getShoppingCartItems = async (me) => {
+  const chartItems = [];
+  let cart;
+  if (me) {
+    const { data } = await client.get(`/shoppingCards/user/price/${me.id}`);
+    cart = data;
+    for (const item of cart) {
+      const product = await client.get(`/products/${item.product}`);
+      item.product = product;
+      const chartItem = {
+        title: product.data.title,
+        quantity: item.amount,
+        size: item.size,
+        color: item.color,
+        price: item.price,
+        media: product.data.media,
+      };
+      chartItems.push(chartItem);
+    }
+  } else {
+    // cart = localStorage.getItem(localStorageName);
+    cart = localStorage.getItem("Cart");
+    if (!cart) return [];
+    cart = JSON.parse(cart);
+    for (const item of cart) {
+      const { data } = await client.get(`/products/stock/id/${item.stockId}`);
+
+      const chartItem = {
+        title: data.title,
+        quantity: item.amount,
+        size: data.size,
+        color: data.color,
+        price: data.price,
+        media: data.media,
+      };
+      chartItems.push(chartItem);
+    }
+  }
+  console.log(chartItems);
+  return chartItems;
+};
+
 const transferLocalStorageToDatabase = async (userId) => {
   console.log("userId:");
   console.log(userId);
@@ -74,4 +116,8 @@ const transferLocalStorageToDatabase = async (userId) => {
   }
 };
 
-export { addProductToCart, transferLocalStorageToDatabase };
+export {
+  addProductToCart,
+  transferLocalStorageToDatabase,
+  getShoppingCartItems,
+};
