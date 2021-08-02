@@ -7,6 +7,7 @@ const CartTab = ({
   cartItems,
   deleteCartItem,
   setOpenTab,
+  setCartItems,
 }) => {
   const openShippingTab = () => {
     setOpenTab(2);
@@ -20,9 +21,17 @@ const CartTab = ({
         </div>
       </div>
       {cartItems &&
-        cartItems.map((item) => (
-          <CartItem cartItem={item} deleteCartItem={deleteCartItem} />
-        ))}
+        cartItems
+          .sort((a, b) => a.id - b.id)
+          .map((item) => (
+            <CartItem
+              key={item.id}
+              cartItem={item}
+              deleteCartItem={deleteCartItem}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
+            />
+          ))}
       <div className="px-1 pb-2 pt-4 mx-auto text-center">
         <button
           className="bg-secondary text-primary font-regular py-2.5 px-6 rounded-default text-xl shadow-xl active:bg-s-hover my-2 w-full"

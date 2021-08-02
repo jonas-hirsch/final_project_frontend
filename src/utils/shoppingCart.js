@@ -131,9 +131,41 @@ const transferLocalStorageToDatabase = async (userId) => {
   }
 };
 
+const updateShoppingCartItem = async (shoppingCartItem, me) => {
+  console.log({ shoppingCartItem });
+  if (me) {
+    // Update item in DB
+    try {
+      const result = await client.patch(
+        `/shoppingCards/${shoppingCartItem.id}`,
+        {
+          amount: shoppingCartItem.quantity,
+        }
+      );
+      console.log(result);
+      return result.status < 400;
+    } catch (error) {
+      console.error(error);
+      return false;
+    }
+  } else {
+    // Update item in localStorage
+    let localStorageCart = JSON.parse(localStorage.getItem(localStorageName));
+    for (const cart of localStorageCart) {
+      if (cart.stockId === shoppingCartItem.id) {
+        console.log("Update");
+        cart.amount = shoppingCartItem.quantity;
+      }
+    }
+    console.log({ localStorageCart: localStorageCart });
+    localStorage.setItem(localStorageName, JSON.stringify(localStorageCart));
+  }
+};
+
 export {
   addProductToCart,
   transferLocalStorageToDatabase,
   getShoppingCartItems,
   deleteShoppingCardItem,
+  updateShoppingCartItem,
 };
