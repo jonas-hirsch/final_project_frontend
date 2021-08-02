@@ -1,7 +1,11 @@
 import React from "react";
 import CartItem from "./CartItem";
 
-const CartTab = ({ openTab, cartIndex, cartItems }) => {
+const CartTab = ({ openTab, cartIndex, cartItems, setOpenTab }) => {
+  const openShippingTab = () => {
+    setOpenTab(2);
+    window.scrollTo(0, 0);
+  };
   return (
     <div className={openTab === cartIndex + 1 ? "block" : "hidden"} id="link1">
       <div className="text-md text-body">
@@ -14,8 +18,9 @@ const CartTab = ({ openTab, cartIndex, cartItems }) => {
         <button
           className="bg-secondary text-primary font-regular py-2.5 px-6 rounded-default text-xl shadow-xl active:bg-s-hover my-2 w-full"
           style={{ margin: "50px 50px", width: "60%" }}
+          onClick={openShippingTab}
         >
-          BUY
+          NEXT
         </button>
       </div>
     </div>

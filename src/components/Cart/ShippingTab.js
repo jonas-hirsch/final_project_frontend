@@ -1,6 +1,10 @@
 import React from "react";
 
-const ShippingTab = ({ openTab, cartIndex }) => {
+const ShippingTab = ({ openTab, cartIndex, setOpenTab }) => {
+  const continueToPayment = () => {
+    setOpenTab(3);
+    window.scrollTo(0, 0);
+  };
   return (
     <div className={openTab === cartIndex + 1 ? "block" : "hidden"} id="link2">
       <div className="text-md text-body">
@@ -75,8 +79,11 @@ const ShippingTab = ({ openTab, cartIndex }) => {
             />
             <br />
             <div className="px-0 pt-8 mx-0 text-center">
-              <button className="bg-secondary text-primary font-regular py-2.5 px-6 rounded-default text-xl shadow-xl active:bg-s-hover my-2 w-full">
-                Submit
+              <button
+                className="bg-secondary text-primary font-regular py-2.5 px-6 rounded-default text-xl shadow-xl active:bg-s-hover my-2 w-full"
+                onClick={continueToPayment}
+              >
+                NEXT
               </button>
             </div>
           </form>

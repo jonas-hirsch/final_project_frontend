@@ -43,8 +43,13 @@ const Cart = () => {
                   openTab={openTab}
                   cartIndex={0}
                   cartItems={cartItems}
+                  setOpenTab={setOpenTab}
                 />
-                <ShippingTab openTab={openTab} cartIndex={1} />
+                <ShippingTab
+                  openTab={openTab}
+                  cartIndex={1}
+                  setOpenTab={setOpenTab}
+                />
                 <PaymentTab openTab={openTab} cartIndex={2} />
               </div>
             </div>

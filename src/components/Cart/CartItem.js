@@ -2,12 +2,13 @@ import React from "react";
 import { Close24 } from "@carbon/icons-react";
 
 const CartItem = ({ cartItem }) => {
+  console.log(cartItem);
   return (
     <div className="divide-y divide-gray-700 border border-light w-md max-w-md rounded-default">
       <div className="m-2 w-md max-w-md p-2 rounded-default">
         <div className="flex pt-2">
           <img
-            src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bXVnfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=60"
+            src={cartItem.media && cartItem.media[0].path}
             alt="Example"
             className="w-1/2 rounded-default mr-4"
           />
