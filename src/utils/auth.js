@@ -24,7 +24,6 @@ const login = async (credentials) => {
     });
     const token = headers["x-authorization-token"];
     const userId = headers["user-id"];
-    console.log(token);
     if (token) {
       setToken(token);
 
