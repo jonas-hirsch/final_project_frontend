@@ -16,6 +16,7 @@ import { getToken, getUserContext } from "./utils/auth";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ProtectedRolesRoute from "./components/ProtectedRoleRoute";
 
+
 const App = () => {
   const [me, setMe] = useState();
 
@@ -31,7 +32,7 @@ const App = () => {
         <NavBar />
 
         <Switch>
-          
+        
           <Route path="/mymessage">
             <Message />
           </Route>
