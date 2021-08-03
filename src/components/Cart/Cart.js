@@ -17,7 +17,7 @@ const Cart = () => {
   useEffect(async () => {
     const cart = await getShoppingCartItems(me);
     setCartItems(cart);
-  }, []);
+  }, [me]);
 
   const deleteCartItem = (cartItem) => {
     setCartItems((prev) => prev.filter((item) => item.id !== cartItem.id));

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { login, getToken } from "../../utils/auth";
 import { transferLocalStorageToDatabase } from "../../utils/shoppingCart";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LoginForm = ({
   setDisplayLogin,
@@ -15,11 +17,18 @@ const LoginForm = ({
       password: e.target.password.value,
     });
     if (userId) {
-      alert("Successfully loged in");
+      await transferLocalStorageToDatabase(userId);
       getContext();
-      transferLocalStorageToDatabase(userId);
     } else {
-      alert("Failed to login");
+      toast.error("Wrong credentials: Failed to login", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
 
@@ -35,6 +44,16 @@ const LoginForm = ({
   };
   return (
     <>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+      />
       <form onSubmit={performLogin}>
         <label htmlFor="email">E-Mail-Address:</label>
         <br />
