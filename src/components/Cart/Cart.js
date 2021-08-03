@@ -12,7 +12,7 @@ const tabItems = ["1. Cart", "2. Shipping", "3. Payment"];
 const Cart = () => {
   const [openTab, setOpenTab] = useState(1);
   const [cartItems, setCartItems] = useState([]);
-  const { me } = useContext(AuthContext);
+  const { me, setMe } = useContext(AuthContext);
 
   useEffect(async () => {
     const cart = await getShoppingCartItems(me);
@@ -57,6 +57,7 @@ const Cart = () => {
                   openTab={openTab}
                   cartIndex={1}
                   setOpenTab={setOpenTab}
+                  me={me}
                 />
                 <PaymentTab openTab={openTab} cartIndex={2} />
               </div>
