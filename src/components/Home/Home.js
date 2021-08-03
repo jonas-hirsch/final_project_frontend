@@ -10,10 +10,10 @@ const Home = () => {
     return (
         <div className=''>
             <div className="justify-center text-center w-full mb-20 max-w-full h-auto">
-                <div className="text-left" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1545486332-9e0999c535b2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2t8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=60)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '70vh' }}>
-                    <div className="pt-24 px-4 text-primary md:ml-20 lg:ml-20">
-                        <p className="text-5xl font-bold mb-2">WELCOME TO CODE-GEAR</p>
-                        <p className="text-xl mb-20 text-disabled w-full md:w-1/2 ">The place where Developer get lost!</p>
+                <div className="text-left" style={{backgroundColor: '#222'}}>
+                    <div className="justify-center text-left pt-24 px-4 text-primary md:ml-20 lg:ml-20">
+                        <p className="text-left font-bold mb-2" style={{ fontSize: '100px'}}><span>EAT</span> / <span className="text-link">SLEEP</span><br /> <span className="text-link">CODE</span> / <span>REPEAT</span></p>
+                        <p className="text-3xl mt-10 text-left mb-20 text-disabled w-full md:w-1/2 "><span className="text-link font-semibold">CODE</span> hard so you can <span className="font-semibold">SHOP</span> harder.</p> 
                         <button onClick={() => history.push('/catalog')} className='bg-white text-secondary font-regular py-2.5 px-6 rounded-default text-2xl shadow-xl active:bg-white active:text-secondary mb-14'>Shop now</button>
                     </div>
                 </div>
