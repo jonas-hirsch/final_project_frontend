@@ -3,7 +3,7 @@ import { getToken } from "./auth";
 
 const { REACT_APP_DEV_API_URL, REACT_APP_PROD_API_URL, NODE_ENV } = process.env;
 const baseURL =
-  NODE_ENV === "production" ? REACT_APP_PROD_API_URL : REACT_APP_PROD_API_URL;
+  NODE_ENV === "production" ? REACT_APP_PROD_API_URL : REACT_APP_DEV_API_URL;
 
 // const baseURL = process.env.BACKEND_URL;
 const client = axios.create({ baseURL });
