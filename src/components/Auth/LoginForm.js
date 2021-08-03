@@ -54,7 +54,29 @@ const LoginForm = ({
         pauseOnFocusLoss
         draggable
       />
-      <form onSubmit={performLogin}>
+      {/* Login Form */}
+      <div className="h-screen w-screen">
+        <div className="py-40 flex items-center justify-around flex-wrap">
+        <div className="w-1/2 h-1/2 bg-s-hover " >
+          {/* Hero Image */}hero
+        </div>
+        <div className="w-full md:w-1/2 ">
+        <p className="text-5xl text-right pr-20 pb-10 font-semibold">User Login</p>
+          <form onSubmit={performLogin} className='flex flex-col items-baseline justify-center space-y-2 mx-20'>
+            <label htmlFor="email">Email: </label>
+            <input className='py-2 px-4 placeholder-gray-30 border border-gray-30 focus:ring focus:outline-none
+	          focus:placeholder-gray-50 rounded-default w-full' type='text' name='email' placeholder='example@gmail.com' />
+            <label className='pt-6' htmlFor="password">Password: </label>
+            <input className='py-2 px-4 placeholder-gray-30 border border-gray-30 focus:ring focus:outline-none
+	          focus:placeholder-gray-50 rounded-default w-full' type='password' name='password' placeholder='password' />
+            <input className='bg-primary text-white uppercase  focus:shadow-lg py-2 px-8 min-w-min max-w-full mx-auto rounded-default shadow-md flex flex-wrap text-center border cursor-pointer focus:bg-p-hover' type='submit' value='Login' />
+          </form>
+          <p className='font-semibold mt-3 cursor-pointer text-left pl-20' onClick={displayResetPassword}>Forgot password?</p>
+        </div>
+      </div>
+      </div>
+     
+      {/* <form onSubmit={performLogin}>
         <label htmlFor="email">E-Mail-Address:</label>
         <br />
         <input type="text" name="email" placeholder="E-Mail-Address" />
@@ -65,8 +87,8 @@ const LoginForm = ({
         <br />
         <br />
         <input type="submit" value="Login" />
-      </form>
-      <p onClick={displayResetPassword}>Forgot password?</p>
+      </form> */}
+      
     </>
   );
 };
