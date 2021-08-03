@@ -13,8 +13,8 @@ import ProductsCategory from "./components/Product/ProductsCategory";
 import Login from "./components/Auth/Login";
 import AuthContext from "./context/AuthContext";
 import { getToken, getUserContext } from "./utils/auth";
-import ProtectedRoute from "./components/ProtectedRoute";
-import ProtectedRolesRoute from "./components/ProtectedRoleRoute";
+// import ProtectedRoute from "./components/ProtectedRoute";
+// import ProtectedRolesRoute from "./components/ProtectedRoleRoute";
 
 
 const App = () => {
