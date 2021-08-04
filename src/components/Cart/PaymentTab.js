@@ -5,7 +5,7 @@ import MyCheckoutForm from "./MyCheckoutForm.js";
 import TestCheckoutForm from "./TestCheckoutForm.js";
 
 const promise = loadStripe(
-  "sk_test_51JJwlGH5K3u9KNtaQwTf33XkJkYPNo2I1lqgc38l1yaPL2LGgnIzFdhaX8yyON0xfqvp48tlZpfxXV0fEBQgTkZK006kEjQrS2"
+  "REACT_APP_PUBLISHABLE_KEY"
 );
 
 const PaymentTab = ({ openTab, cartIndex }) => {
