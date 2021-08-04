@@ -25,7 +25,7 @@ const Home = () => {
 
                 <span className="text-4xl text-secondary font-semibold">Discover</span>
                 <span className="text-xl font-normal text-body"
-                >ENJOY WITH LOVE</span>
+                >ENJOY WITH LOVE ! I AM PURE NIGGER</span>
             </div>
 
             <div className="px-4 mb-28">
