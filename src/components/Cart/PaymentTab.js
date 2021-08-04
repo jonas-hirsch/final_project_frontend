@@ -4,7 +4,9 @@ import { Elements } from "@stripe/react-stripe-js";
 // import MyCheckoutForm from "./MyCheckoutForm.js";
 import TestCheckoutForm from "./TestCheckoutForm.js";
 
+
 const promise = loadStripe(process.env.REACT_APP_PUBLISHABLE_KEY);
+
 
 const PaymentTab = ({ openTab, cartIndex }) => {
   return (
