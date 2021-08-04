@@ -69,10 +69,10 @@ const MyCheckoutForm = () => {
   };
   return (
     <>
-      <form id="payment-form" onSubmit={handleSubmit}>
-        <input id="card-element" options={cardStyle} onChange={handleChange} />
+      <form style={{margin: "50px"}} id="payment-form" onSubmit={handleSubmit}>
+        {/* <input id="card-element" options={cardStyle} onChange={handleChange} /> */}
         <CardElement
-          id="card-element-2"
+          id="card-element"
         //   options={cardStyle}
           onChange={handleChange}
         />
