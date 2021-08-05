@@ -38,7 +38,7 @@ const SingleProduct = () => {
   const addToCart = () => {
     toast("Product added to the your shopping cart.", {
       position: "top-right",
-      autoClose: 2000,
+      autoClose: 1500,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -122,15 +122,14 @@ const SingleProduct = () => {
               </p> */}
 
               <select className="" onChange={selectItem}>
-              {singleProduct.stock &&
-                singleProduct.stock.map((stock) => (
-                  <option key={stock.id} value={stock.id}>
-                    {stock.color} - {stock.size}
-                  </option>
-                ))}
-            </select>
+                {singleProduct.stock &&
+                  singleProduct.stock.map((stock) => (
+                    <option key={stock.id} value={stock.id}>
+                      {stock.color} - {stock.size}
+                    </option>
+                  ))}
+              </select>
 
-      
               <div className="font-normal text-body">
                 Price:
                 <span className="pl-12 pr-2 font-semibold text-secondary">
