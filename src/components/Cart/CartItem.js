@@ -65,7 +65,7 @@ const CartItem = ({ cartItem, deleteCartItem, cartItems, setCartItems }) => {
               </button>
             </div>
             <div>
-              <p className="flex justify-start w-full">
+              <p className="flex justify-start w-full ">
                 <span className="font-regular text-md">Quantity: &nbsp;</span>{" "}
                 <span className="pl-6 ">
                   <button

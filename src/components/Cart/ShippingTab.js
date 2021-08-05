@@ -122,7 +122,7 @@ const ShippingTab = ({ openTab, cartIndex, setOpenTab, me, cartItems }) => {
         className={openTab === cartIndex + 1 ? "block" : "hidden"}
         id="link2"
       >
-        <div className="text-md text-body">
+        <div className="text-md text-body ">
           <div className="flex justify-center align-center p-2 text-3xl">
             <h3>Shipping</h3>
           </div>

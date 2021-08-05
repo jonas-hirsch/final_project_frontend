@@ -1,19 +1,15 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect,} from "react";
 import axios from "axios";
 import "./ProductStyle.css";
-import { addProductToCart } from "../../utils/shoppingCart";
 import { Link } from "react-router-dom";
 import { Add24 } from "@carbon/icons-react";
 import { useHistory, useParams } from "react-router-dom";
 // import { Redirect } from "react-router";
-import AuthContext from "../../context/AuthContext";
-import { ToastContainer, toast } from "react-toastify";
 
 const Product = () => {
   const history = useHistory();
   const {id} = useParams();
-  const { me } = useContext(AuthContext);
-  const [stockId, setStockId] = useState();
+  
 
   const [realProducts, setRealProducts] = useState();
   const [openTab, setOpenTab] = useState(3);
@@ -31,33 +27,13 @@ const Product = () => {
       });
   }, [id]);
 
-  const addToCart = () => {
-    toast("Product added to the your shopping cart.", {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-    addProductToCart(stockId, 1, me);
-  };
+  
 
   if (!realProducts) return <span>Loading...</span>;
 
   return (
     <>
-     <ToastContainer
-        position="top-center"
-        autoClose={2000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-      />
+     
       <div className="tabs flex flex-wrap">
         <div className="w-full max-w-md">
           <ul className="flex flex-wrap pt-3 pb-2 flex-row" role="tablist">
@@ -235,7 +211,7 @@ const Product = () => {
                                         {product.stock[0].price}€
                                       </p>
                                       
-                                        <button onClick={addToCart}>
+                                        <button>
                                           <Add24 />
                                         </button>{" "}
                                       
