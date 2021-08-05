@@ -1,9 +1,15 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
+    
 
 
 const Home = () => {
-
+    const notify = () => toast("Thanks for Subscribing!");
     const history = useHistory();
     
 
@@ -25,7 +31,7 @@ const Home = () => {
 
                 <span className="text-4xl text-secondary font-semibold">Discover</span>
                 <span className="text-xl font-normal text-body"
-                >ENJOY WITH LOVE ! I AM PURE NIGGER</span>
+                >ENJOY WITH LOVE !</span>
             </div>
 
             <div className="px-4 mb-28">
@@ -85,7 +91,8 @@ const Home = () => {
                     <input type="text" name="email" id="email" placeholder="email@example.com" className="w-full border border-light rounded-default py-2 px-4 focus:outline-none 
 					text-body focus:ring text-center md:py-3 md:px-28 "/>
                 </div>
-                <button className='bg-primary text-primary font-regular py-2.5 px-6 rounded-default text-xl shadow-xl active:bg-p-hover my-2 w-full md:w-1/5'>Subscribe</button>
+                <button onClick={notify} className='bg-primary text-primary font-regular py-2.5 px-6 rounded-default text-xl shadow-xl active:bg-p-hover my-2 w-full md:w-1/5'>Subscribe</button>
+                <ToastContainer />
             </div>
         </div>
 

@@ -11,7 +11,7 @@ const CategoryNavTab = ({
   return (
     <>
       <li className=" last:mr-0 flex-0 text-center last:border-r-0">
-        <a
+        <a href="/#"
           className={`font-normal 
             text-md px-4 py-1 
             border-light  

@@ -59,7 +59,7 @@ const Cart = () => {
                   setOpenTab={setOpenTab}
                   me={me}
                 />
-                <PaymentTab openTab={openTab} cartIndex={2} />
+                <PaymentTab openTab={openTab} cartIndex={2} setCartItems={setCartItems} me={me} />
               </div>
             </div>
           </div>

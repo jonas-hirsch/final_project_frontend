@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Add24 } from "@carbon/icons-react";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, } from "react-router-dom";
 import CategoryNavTab from "./CategoryNavTab";
 import client from "../../utils/client";
 
