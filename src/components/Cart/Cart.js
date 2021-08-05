@@ -6,6 +6,7 @@ import ShippingTab from "./ShippingTab";
 import CartTab from "./CartTab";
 import { getShoppingCartItems } from "../../utils/shoppingCart";
 import AuthContext from "../../context/AuthContext";
+import client from "../../utils/client";
 
 const tabItems = ["1. Cart", "2. Shipping", "3. Payment"];
 
@@ -23,6 +24,37 @@ const Cart = () => {
     setCartItems((prev) => prev.filter((item) => item.id !== cartItem.id));
   };
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const cart = await getShoppingCartItems(me);
+      setCartItems(cart);
+      if (!me) {
+        try {
+          const meResult = await client.get("/auth/me");
+          const { data } = meResult;
+          if (data) {
+            setMe(data);
+            console.log(data);
+
+            return data;
+          }
+        } catch (e) {
+          console.log("User not logged in:", e.message);
+        }
+      }
+    };
+    fetchData();
+  }, [me, setMe]);
+
+  const onSetOpenTab = (tabIndex) => {
+    if (tabIndex !== 3) {
+      setOpenTab(tabIndex);
+    }
+  };
+
+  if (!me) {
+    return <></>;
+  }
   return (
     <>
       <div
@@ -37,7 +69,7 @@ const Cart = () => {
                 cartName={item}
                 index={index}
                 openTab={openTab}
-                setOpenTab={setOpenTab}
+                setOpenTab={onSetOpenTab}
               />
             ))}
           </ul>
@@ -56,10 +88,16 @@ const Cart = () => {
                 <ShippingTab
                   openTab={openTab}
                   cartIndex={1}
+                  cartItems={cartItems}
                   setOpenTab={setOpenTab}
                   me={me}
                 />
-                <PaymentTab openTab={openTab} cartIndex={2} setCartItems={setCartItems} me={me} />
+                <PaymentTab
+                  openTab={openTab}
+                  cartIndex={2}
+                  setCartItems={setCartItems}
+                  me={me}
+                />
               </div>
             </div>
           </div>

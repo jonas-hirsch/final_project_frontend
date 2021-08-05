@@ -3,7 +3,7 @@ import client from "../../utils/client";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ShippingTab = ({ openTab, cartIndex, setOpenTab, me }) => {
+const ShippingTab = ({ openTab, cartIndex, setOpenTab, me, cartItems }) => {
   const [personalData, setPersonalData] = useState({ ...me });
   // const [selectedAddress, setSelectedAddress] = useState(0);
   const [address, setAddress] = useState({});
@@ -23,6 +23,19 @@ const ShippingTab = ({ openTab, cartIndex, setOpenTab, me }) => {
   const continueToPayment = async (e) => {
     e.preventDefault();
     // setMe(personalData);
+    if (cartItems.length === 0) {
+      console.log("Aborted: Shopping cart is empty.");
+      toast.error("Payment not possible: Shopping cart is empty", {
+        position: "top-center",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return;
+    }
     const validationError = verifyAddressData();
     if (validationError.error) {
       toast.error(validationError.errorMessage, {
@@ -113,7 +126,10 @@ const ShippingTab = ({ openTab, cartIndex, setOpenTab, me }) => {
           <div className="flex justify-center align-center p-2 text-3xl">
             <h3>Shipping</h3>
           </div>
-          <div style={{margin:" 0 auto"}} className="divide-y divide-gray-700 w-md max-w-md m-2 border border-light rounded-default">
+          <div
+            style={{ margin: " 0 auto" }}
+            className="divide-y divide-gray-700 w-md max-w-md m-2 border border-light rounded-default"
+          >
             <form
               onSubmit={continueToPayment}
               className="pt-10 pb-6 text-left px-2"
@@ -200,7 +216,7 @@ const ShippingTab = ({ openTab, cartIndex, setOpenTab, me }) => {
                   className="bg-secondary text-primary font-regular py-2.5 px-6 rounded-default text-xl shadow-xl active:bg-s-hover my-2 w-full"
                   onClick={continueToPayment}
                 >
-                  NEXT
+                  BUY NOW
                 </button>
               </div>
             </form>
