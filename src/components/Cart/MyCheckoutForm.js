@@ -26,24 +26,24 @@ const MyCheckoutForm = () => {
     };
     fetchData();
   }, []);
-  const cardStyle = {
-    style: {
-      base: {
-          backgroundColor: 'pink',
-        color: "#32325d",
-        fontFamily: "Arial, sans-serif",
-        fontSmoothing: "antialiased",
-        fontSize: "16px",
-        "::placeholder": {
-          color: "#32325d",
-        },
-      },
-      invalid: {
-        color: "#fa755a",
-        iconColor: "#fa755a",
-      },
-    },
-  };
+  // const cardStyle = {
+  //   style: {
+  //     base: {
+  //         backgroundColor: 'pink',
+  //       color: "#32325d",
+  //       fontFamily: "Arial, sans-serif",
+  //       fontSmoothing: "antialiased",
+  //       fontSize: "16px",
+  //       "::placeholder": {
+  //         color: "#32325d",
+  //       },
+  //     },
+  //     invalid: {
+  //       color: "#fa755a",
+  //       iconColor: "#fa755a",
+  //     },
+  //   },
+  // };
   const handleChange = async (event) => {
     // Listen for changes in the CardElement
     // and display any errors as the customer types their card details

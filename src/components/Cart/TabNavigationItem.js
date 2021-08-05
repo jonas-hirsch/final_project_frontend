@@ -3,7 +3,7 @@ import React from "react";
 const TabNavigationItem = ({ cartName, index, openTab, setOpenTab }) => {
   return (
     <li className="last:mr-0 flex-auto text-center navItem">
-      <a
+      <a href="/#"
         className={`font-normal 
         text-md px-4 py-2 uppercase 
         tracking-wide ${
