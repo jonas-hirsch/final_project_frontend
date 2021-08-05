@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 const SingleProduct = () => {
   const [singleProduct, setSingleProduct] = useState();
   const [stockId, setStockId] = useState();
+  const [displayedMedia, setDisplayedMedia] = useState(0);
   const { id } = useParams();
   const { me } = useContext(AuthContext);
 
@@ -70,24 +71,25 @@ const SingleProduct = () => {
               className="rounded-default"
               src={
                 singleProduct.media
-                  ? singleProduct.media[0].path
+                  ? singleProduct.media[displayedMedia].path
                   : "defaultProductPicture.jpeg"
               }
               alt="Productview"
             ></img>
             <div className="w-1/4 flex justify-start py-3 ml-1">
               {singleProduct.media &&
-                singleProduct.media.map((media) => (
+                singleProduct.media.map((media, index) => (
                   <img
                     className="mr-2 rounded-default  hover:shadow cursor-pointer"
                     src={media.path}
                     key={media.id}
                     alt="Productview"
+                    onClick={() => setDisplayedMedia(index)}
                   />
                 ))}
             </div>
             <div className="flex justify-between font-normal text-body py-2 pb-3 text-left pl-1 text-sm">
-             {/* <p className="font-normal text-body">
+              {/* <p className="font-normal text-body">
                 Quantity:
                 <span className="pl-6 ">
                   <button className="font-semibold text-secondary">
@@ -119,13 +121,13 @@ const SingleProduct = () => {
                 </span>
               </p> */}
               <select class="" onChange={selectItem}>
-              {singleProduct.stock &&
-                singleProduct.stock.map((stock) => (
-                  <option key={stock.id} value={stock.id}>
-                    {stock.color} - {stock.size}
-                  </option>
-                ))}
-            </select>
+                {singleProduct.stock &&
+                  singleProduct.stock.map((stock) => (
+                    <option key={stock.id} value={stock.id}>
+                      {stock.color} - {stock.size}
+                    </option>
+                  ))}
+              </select>
               <div className="font-normal text-body">
                 Price:
                 <span className="pl-12 pr-2 font-semibold text-secondary">
@@ -144,7 +146,7 @@ const SingleProduct = () => {
                 className="break-normal text-body"
               ></p>
             </div>
-            
+
             <div className="px-1 pb-2 pt-4 mx-auto text-center">
               <button
                 className="bg-secondary text-primary font-regular py-2.5 px-6 rounded-default text-xl shadow-xl active:bg-s-hover my-2 w-full"
