@@ -82,12 +82,13 @@ export default function CheckoutForm({ orderId }) {
 
   const styles = {
     form: {
-      width: "30vw",
+      width: "500px",
       alignSelf: "center",
       borderRadius: "7px",
       boxShadow: `0px 0px 0px 0.5px rgba(50, 50, 93, 0.1), 0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07)`,
       padding: "40px",
       justifyContent: "center",
+      margin: "0 auto",
     },
     button: {
       background: "#5469d4",
