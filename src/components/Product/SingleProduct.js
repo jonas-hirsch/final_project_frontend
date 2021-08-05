@@ -118,7 +118,7 @@ const SingleProduct = () => {
                   </button>
                 </span>
               </p> */}
-              <select class="" onChange={selectItem}>
+              <select className="" onChange={selectItem}>
               {singleProduct.stock &&
                 singleProduct.stock.map((stock) => (
                   <option key={stock.id} value={stock.id}>
