@@ -26,7 +26,7 @@ const PaymentTab = ({ openTab, cartIndex, me, setCartItems }) => {
       }
     };
     fetchData();
-  }, [openTab, cartIndex, setCartItems, me.id]);
+  }, [openTab]);
 
   const promise = loadStripe(process.env.REACT_APP_PUBLISHABLE_KEY);
 

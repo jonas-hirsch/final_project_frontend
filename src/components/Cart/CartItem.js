@@ -44,7 +44,7 @@ const CartItem = ({ cartItem, deleteCartItem, cartItems, setCartItems }) => {
   };
 
   return (
-    <div className="divide-y divide-gray-700 border border-light w-md max-w-md rounded-default">
+    <div style={{margin:" 0 auto"}}  className="divide-y divide-gray-700 border border-light w-md max-w-md rounded-default md:justify-between">
       <div className="m-2 w-md max-w-md p-2 rounded-default">
         <div className="flex pt-2">
           <img
@@ -62,7 +62,7 @@ const CartItem = ({ cartItem, deleteCartItem, cartItems, setCartItems }) => {
               </button>
             </div>
             <div>
-              <p className="flex justify-start w-full">
+              <p className="flex justify-start w-full ">
                 <span className="font-regular text-md">Quantity: &nbsp;</span>{" "}
                 <span className="pl-6 ">
                   <button

@@ -109,11 +109,11 @@ const ShippingTab = ({ openTab, cartIndex, setOpenTab, me }) => {
         className={openTab === cartIndex + 1 ? "block" : "hidden"}
         id="link2"
       >
-        <div className="text-md text-body">
+        <div className="text-md text-body ">
           <div className="flex justify-center align-center p-2 text-3xl">
             <h3>Shipping</h3>
           </div>
-          <div className="divide-y divide-gray-700 w-md max-w-md m-2 border border-light rounded-default">
+          <div style={{margin:" 0 auto"}} className="divide-y divide-gray-700 w-md max-w-md m-2 border border-light rounded-default">
             <form
               onSubmit={continueToPayment}
               className="pt-10 pb-6 text-left px-2"
