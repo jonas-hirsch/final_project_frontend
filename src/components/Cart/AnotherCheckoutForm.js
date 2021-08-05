@@ -84,11 +84,13 @@ export default function CheckoutForm({orderId}) {
 
   const styles = {
       form: {
-        width: "30vw",
+        width: "40%",
         alignSelf: "center",
         borderRadius: "7px",
         boxShadow: `0px 0px 0px 0.5px rgba(50, 50, 93, 0.1), 0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07)`,
-        padding: "40px"
+        padding: "40px",
+        justifyContent:"center"
+        
       },
       button: {
         background: "#5469d4",
@@ -110,7 +112,8 @@ export default function CheckoutForm({orderId}) {
   if (!orderId) return <>Loading...</>
 
   return (
-    <form id="payment-form" onSubmit={handleSubmit} style={styles["form"]}>
+    <div style={{height:"50vh"}}>
+        <form id="payment-form" onSubmit={handleSubmit} style={styles["form"]}>
       <CardElement id="card-element" options={cardStyle} onChange={handleChange} />
       <button
         disabled={processing || disabled || succeeded}
@@ -142,5 +145,6 @@ export default function CheckoutForm({orderId}) {
         </a> Refresh the page to pay again.
       </p>
     </form>
+    </div>
   );
 }
