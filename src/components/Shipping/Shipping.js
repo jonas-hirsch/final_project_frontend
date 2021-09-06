@@ -12,15 +12,15 @@ const Shipping = () => {
                 <div>
                     <form>
                         <label>eamil</label>
-                        <input></input>
+                        <input type="text" name="email" id="email" placeholder="Email"></input>
                         <label>first name</label>
-                        <input></input>
+                        <input type="text" name="firstname" id="firstname" placeholder="First Name"></input>
                         <label>last name</label>
-                        <input></input>
+                        <input type="lastname" name="lastname" id="lastname" placeholder="Sir Name"></input>
                         <label>address</label>
-                        <input></input>
+                        <input type="adress" name="adress" id="adress" placeholder="adress"></input>
                         <label>postcode</label>
-                        <input></input>
+                        <input type="postcode" name="postcode" id="postcode" placeholder="Postcode"></input>
                     </form>
                     <div>
                         <h4>Total:</h4>

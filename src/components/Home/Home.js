@@ -16,10 +16,10 @@ const Home = () => {
     return (
         <div className=''>
             <div className="justify-center text-center w-full mb-20 max-w-full h-auto">
-                <div className="text-left" style={{backgroundColor: '#222'}}>
-                    <div className="justify-center text-left pt-24 px-4 text-primary md:ml-20 lg:ml-20">
-                        <p className="text-left font-bold mb-2" style={{ fontSize: '100px'}}><span>EAT</span> / <span className="text-link">SLEEP</span><br /> <span className="text-link">CODE</span> / <span>REPEAT</span></p>
-                        <p className="text-3xl mt-10 text-left mb-20 text-disabled w-full md:w-1/2 "><span className="text-link font-semibold">CODE</span> hard so you can <span className="font-semibold">SHOP</span> harder.</p> 
+                <div className="text-center" style={{backgroundColor: '#222'}}>
+                    <div className="justify-center text-center pt-24 px-4 text-primary md:ml-20 lg:ml-20">
+                        <p className="text-center font-bold mb-2" style={{ fontSize: '90px'}}><span>EAT</span> / <span className="text-link">SLEEP</span><br /> <span className="text-link">CODE</span> / <span>REPEAT</span></p>
+                        <p className="text-3xl mt-10 text-center mb-20 text-disabled w-full md:w-1/2 text-center "><span className="text-link font-semibold">CODE</span> hard so you can <span className="font-semibold">SHOP</span> harder.</p> 
                         <button onClick={() => history.push('/catalog')} className='bg-white text-secondary font-regular py-2.5 px-6 rounded-default text-2xl shadow-xl active:bg-white active:text-secondary mb-14'>Shop now</button>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ const Home = () => {
                     <h2 className='font-semibold text-4xl text-secondary md:pb-4'>Keep in touch</h2>
                     <span className='text-xl pt-1.5 text-body '>Subscribe to our newsleter for updates and exclusive special offers.</span>
                 </div>
-                <div className="pt-14 pb-6 md:p-0">
+                <div className="pt-10 pb-6 md:p-0">
                     <input type="text" name="email" id="email" placeholder="email@example.com" className="w-full border border-light rounded-default py-2 px-4 focus:outline-none 
 					text-body focus:ring text-center md:py-3 md:px-28 "/>
                 </div>

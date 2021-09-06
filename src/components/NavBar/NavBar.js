@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import { logout } from "../../utils/auth";
+//import { Badge } from "minja-ui";
 import { useHistory } from "react-router-dom";
 import {
   Menu24,
@@ -29,7 +30,7 @@ const NavBar = () => {
         <nav className="relative flex-wrap flex items-center justify-between ">
           <div className=" container px-3 mx-auto flex flex-wrap items-center justify-between">
             <div className="w-full text-left relative flex items-center justify-between lg:w-auto lg:static lg:block lg:justify-start">
-
+             
               <Link
                 to="/"
                 className="text-2xl font-semibold inline-block mr-4 py-2"
