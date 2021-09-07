@@ -65,18 +65,18 @@ const NavBar = () => {
 
 
             <div
-              className={`lg:flex flex-grow items-center ${isOpen ? "flex items-center justify-between" : "hidden flex-row"
+              className={`lg:flex ${isOpen ? "flex items-center" : "hidden flex-col"
                 }`}
             >
-              <ul className="flex flex-row flex-wrap list-none items-start lg:flex-row  lg:ml-auto">
+              <ul className="flex flex-row flex-wrap list-none items-start py-2 -mb-5 justify-start md:-mb-2 md:pt-0 lg:flex-row lg:-mb-0 lg:pt-2 lg:ml-auto">
              
                 <li className="nav-item">
                   <Link
                     to="/"
-                    className="px-4 py-2 flex items-center text-md uppercase  hover:opacity-50"
+                    className="px-0 py-2 flex items-center text-md uppercase  hover:opacity-50"
                   >
                     <span>
-                      <Home24 className="mr-4" />
+                      <Home24 className="mr-2" />
                     </span>
                     Home
                   </Link>
@@ -88,7 +88,7 @@ const NavBar = () => {
 										"
                   >
                     <span>
-                      <ShoppingBag24 className="mr-4" />
+                      <ShoppingBag24 className="mr-2" />
                     </span>
                     Shop
                   </Link>
@@ -96,10 +96,10 @@ const NavBar = () => {
                 <li className="nav-item">
                   <Link
                     to="/contact"
-                    className="px-4 py-2 flex items-center text-md uppercase   hover:opacity-50"
+                    className="px-2 py-2 flex items-center text-md uppercase   hover:opacity-50"
                   >
                     <span>
-                      <Email24 className="mr-4" />
+                      <Email24 className="mr-2" />
                     </span>
                     Contact
                   </Link>
@@ -107,20 +107,20 @@ const NavBar = () => {
                 <li className="nav-item">
                   <Link
                     to="/myCart"
-                    className="px-4 py-2 flex items-center text-md uppercase   hover:opacity-50"
+                    className="px-2 py-2 flex items-center text-md uppercase   hover:opacity-50"
                   >
                     <span>
-                      <ShoppingCart24 className="mr-4" />
+                      <ShoppingCart24 className="mr-2" />
                     </span>
                     Cart
                   </Link>
                 </li>
                 <li className="nav_item invisible lg:visible">
-                  <div className="relative px-4 py-2" >
+                  <div className="relative px-2 py-2" >
                     {me ? (
                       <div className="categorie_button" onClick={onLogout}>
                         <div className="hover:opacity-50 flex uppercase">
-                          <Logout24 className="mr-4 " />Logout
+                          <Logout24 className="mr-2 " />Logout
                         </div>
 
                       </div>

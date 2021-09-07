@@ -3,23 +3,18 @@ import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
-
-
-    
-
-
 const Home = () => {
     const notify = () => toast("Thanks for Subscribing!");
     const history = useHistory();
     
 
     return (
-        <div className=''>
+        <div>
             <div className="justify-center text-center w-full mb-20 max-w-full h-auto">
                 <div className="text-center" style={{backgroundColor: '#222'}}>
                     <div className="justify-center text-center pt-24 px-4 text-primary md:ml-20 lg:ml-20">
                         <div className="text-center font-bold mb-2" style={{ fontSize: '90px'}}><span>EAT</span> / <span className="text-link">SLEEP</span><br /> <span className="text-link">CODE</span> / <span>REPEAT</span></div>
-                        <div className="text-3xl mt-10 text-center mb-20 text-disabled w-full md:w-1/2 text-center "><span className="text-link font-semibold">CODE</span> hard so you can <span className="font-semibold">SHOP</span> harder.</div> 
+                        <div className="text-3xl mt-10  mb-20 text-disabled w-full text-center "><span className="text-link font-semibold">CODE</span> hard so you can <span className="font-semibold">SHOP</span> harder.</div> 
                         <button onClick={() => history.push('/catalog')} className='bg-white text-secondary font-regular py-2.5 px-6 rounded-default text-2xl shadow-xl active:bg-white active:text-secondary mb-14'>Shop now</button>
                     </div>
                 </div>
