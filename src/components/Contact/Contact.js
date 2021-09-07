@@ -21,7 +21,7 @@ const Contact = () => {
         <a href="/#" emailto="http://">
           <span className='flex items-center'>
             <Location24 className='mr-2 text-link' />
-            Lalastraße 123, München
+            lalastraße 123, München
           </span>
         </a>
       </div>
