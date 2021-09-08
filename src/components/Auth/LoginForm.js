@@ -56,12 +56,12 @@ const LoginForm = ({
       />
       {/* Login Form */}
       <div className="h-screen w-screen">
-        <div className="py-40 flex items-center justify-around flex-wrap">
-        <div className="w-1/2 h-1/2 bg-s-hover " >
-          {/* Hero Image */}hero
+        <div className="flex items-center justify-around flex-wrap">
+        <div className="w-1/2 h-full bg-s-hover " >
+          <img src="https://images.unsplash.com/photo-1533745848184-3db07256e163?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2VsY29tZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt='Welcome to the Login Page' className="rounded-default relative w-full"/>
         </div>
         <div className="w-full md:w-1/2 ">
-        <p className="text-5xl text-right pr-20 pb-10 font-semibold">User Login</p>
+        <p className="text-5xl text-center pr-20 pb-10 font-semibold">User Login</p>
           <form onSubmit={performLogin} className='flex flex-col items-baseline justify-center space-y-2 mx-20'>
             <label htmlFor="email">Email: </label>
             <input className='py-2 px-4 placeholder-gray-30 border border-gray-30 focus:ring focus:outline-none

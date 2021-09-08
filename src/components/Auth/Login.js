@@ -31,32 +31,53 @@ const Login = () => {
 
   return (
     <>
-      <h1>Welcome back</h1>
-      {displayLogin && (
-        <LoginForm
-          setDisplayLogin={setDisplayLogin}
-          setDisplayResetPassword={setDisplayResetPassword}
-          getContext={getContext}
-        />
-      )}
-      {displayResetPassword && (
-        <ResetPasswordForm
-          setDisplayLogin={setDisplayLogin}
-          setDisplayResetPassword={setDisplayResetPassword}
-        />
-      )}
-      {displayResgisterForm ? (
-        <RegisterForm
-          setDisplayLogin={setDisplayLogin}
-          setDisplayResgisterForm={setDisplayResgisterForm}
-          getContext={getContext}
-        />
-      ) : (
-        <>
-          <h2>I'm new in this shop</h2>
-          <button onClick={displayRegisterForm}>Register</button>
-        </>
-      )}
+      <div>
+        <div>
+          <h1 className="w-full py-40 primary font-semibold text-6xl justify-center flex">
+            Welcome Back
+          </h1>
+        </div>
+        {/* <div>
+          {displayLogin && (
+            <LoginForm
+              setDisplayLogin={setDisplayLogin}
+              setDisplayResetPassword={setDisplayResetPassword}
+              getContext={getContext}
+            />
+          )}
+        </div> */}
+        <div>
+          {displayLogin && (
+            <LoginForm
+              setDisplayLogin={setDisplayLogin}
+              setDisplayResetPassword={setDisplayResetPassword}
+              getContext={getContext}
+            />
+          )}
+        </div>
+        <div>
+          {displayResetPassword && (
+            <ResetPasswordForm
+              setDisplayLogin={setDisplayLogin}
+              setDisplayResetPassword={setDisplayResetPassword}
+            />
+          )}
+        </div>
+        <div>
+          {displayResgisterForm ? (
+            <RegisterForm
+              setDisplayLogin={setDisplayLogin}
+              setDisplayResgisterForm={setDisplayResgisterForm}
+              getContext={getContext}
+            />
+          ) : (
+            <div>
+              <h2>I'm new in this shop</h2>
+              <button onClick={displayRegisterForm}>Register</button>
+            </div>
+          )}
+        </div>
+      </div>
     </>
   );
 };
