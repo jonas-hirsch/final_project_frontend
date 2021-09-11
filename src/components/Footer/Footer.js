@@ -53,13 +53,13 @@ const Footer = () => {
 								<ul className="mb-4">
 									<li className="mt-2">
 										<a
-											href="/#"
+											href="/legalpages"
 											className="hover:underline text-primary text-md hover:opacity-75"
 										>Terms</a>
 									</li>
 									<li className="mt-2">
 										<a
-											href="/#"
+											href="/legalpages"
 											className="hover:underline text-primary text-md hover:opacity-75"
 										>Privacy</a>
 									</li>
