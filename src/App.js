@@ -13,9 +13,9 @@ import ProductsCategory from "./components/Product/ProductsCategory";
 import Login from "./components/Auth/Login";
 import AuthContext from "./context/AuthContext";
 import { getToken, getUserContext } from "./utils/auth";
+import LegalPages from "./legal/LegalPages";
 // import ProtectedRoute from "./components/ProtectedRoute";
 // import ProtectedRolesRoute from "./components/ProtectedRoleRoute";
-
 
 const App = () => {
   const [me, setMe] = useState();
@@ -32,7 +32,9 @@ const App = () => {
         <NavBar />
 
         <Switch>
-        
+          <Route path="/legalpages">
+            <LegalPages />
+          </Route>
           <Route path="/mymessage">
             <Message />
           </Route>
@@ -46,7 +48,7 @@ const App = () => {
             <SingleProduct />
           </Route>
           <Route path="/catalog">
-            <ProductsCategory/>
+            <ProductsCategory />
           </Route>
           <Route path="/login">
             <Login />
