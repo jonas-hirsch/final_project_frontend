@@ -61,35 +61,84 @@ const SingleProduct = () => {
         pauseOnFocusLoss
         draggable
       />
-      <div className="flex justify-center items-center">
-        <div className="w-md max-w-md m-2 px-1.5 rounded-default overflow-hidden border border-light shadow-md">
-          <div>
-            <p className="pl-1 pb-3 pt-6 font-semibold text-3xl text-secondary">
-              {singleProduct.title}
-            </p>
-            <img
-              className="rounded-default"
-              src={
-                singleProduct.media
-                  ? singleProduct.media[displayedMedia].path
-                  : "defaultProductPicture.jpeg"
-              }
-              alt="Productview"
-            ></img>
-            <div className="w-1/4 flex justify-start py-3 ml-1">
-              {singleProduct.media &&
-                singleProduct.media.map((media, index) => (
-                  <img
-                    className="mr-2 rounded-default  hover:shadow cursor-pointer"
-                    src={media.path}
-                    key={media.id}
-                    alt="Productview"
-                    onClick={() => setDisplayedMedia(index)}
-                  />
+      <div className="w-lg max-w-md m-2 rounded-default overflow-hidden border border-light shadow-md justify-center md:flex md:mx-auto md:w-full md:max-w-full md:py-10">
+        <div className="w-full md:w-1/3">
+          <h2 className="pl-1 pb-3 pt-6 font-semibold text-3xl text-center text-secondary">
+            {singleProduct.title}
+          </h2>
+          <img
+            className="rounded-default"
+            src={
+              singleProduct.media
+                ? singleProduct.media[displayedMedia].path
+                : "defaultProductPicture.jpeg"
+            }
+            alt="Productview"
+          ></img>
+        </div>
+        <div className="w-full md:pt-40 md:w-1/4">
+          <div className="w-1/4 flex justify-start py-3 ml-1">
+            {singleProduct.media &&
+              singleProduct.media.map((media, index) => (
+                <img
+                  className="mr-2 rounded-default  hover:shadow cursor-pointer"
+                  src={media.path}
+                  key={media.id}
+                  alt="Productview"
+                  onClick={() => setDisplayedMedia(index)}
+                />
+              ))}
+          </div>
+          <div className="flex justify-between font-normal text-body py-2 pb-3 text-left pl-1 text-sm">
+            <select className="" onChange={selectItem}>
+              {singleProduct.stock &&
+                singleProduct.stock.map((stock) => (
+                  <option key={stock.id} value={stock.id}>
+                    {stock.color} - {stock.size}
+                  </option>
                 ))}
+            </select>
+
+            <div className="font-normal text-body">
+              Price:
+              <span className="pl-12 pr-2 font-semibold text-secondary">
+                {singleProduct &&
+                  singleProduct.stock &&
+                  singleProduct.stock[0].price}
+              </span>
             </div>
-            <div className="flex justify-between font-normal text-body py-2 pb-3 text-left pl-1 text-sm">
-              {/* <p className="font-normal text-body">
+          </div>
+          <div className="py-2 pb-3">
+            <p className="py-1.5 text-xl font-semibold text-secondary">
+              Description:{" "}
+            </p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: singleProduct.description,
+              }}
+              className="break-normal text-body"
+            ></p>
+          </div>
+
+          <div className="px-1 pb-2 pt-4 mx-auto text-center">
+            <button
+              className="bg-primary text-primary font-regular py-2.5 px-6 rounded-default text-xl shadow-xl active:bg-s-hover my-2 w-full"
+              onClick={addToCart}
+              style={{ margin: "50px 50px", width: "80%" }}
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default SingleProduct;
+
+{
+  /* <p className="font-normal text-body">
                 Quantity:
                 <span className="pl-6 ">
                   <button className="font-semibold text-secondary">
@@ -119,50 +168,5 @@ const SingleProduct = () => {
                     XL&nbsp;
                   </button>
                 </span>
-              </p> */}
-
-              <select className="" onChange={selectItem}>
-                {singleProduct.stock &&
-                  singleProduct.stock.map((stock) => (
-                    <option key={stock.id} value={stock.id}>
-                      {stock.color} - {stock.size}
-                    </option>
-                  ))}
-              </select>
-
-              <div className="font-normal text-body">
-                Price:
-                <span className="pl-12 pr-2 font-semibold text-secondary">
-                  {singleProduct &&
-                    singleProduct.stock &&
-                    singleProduct.stock[0].price}
-                </span>
-              </div>
-            </div>
-            <div className="py-2 pb-3">
-              <p className="py-1.5 text-xl font-semibold text-secondary">
-                Description:{" "}
-              </p>
-              <p
-                dangerouslySetInnerHTML={{ __html: singleProduct.description }}
-                className="break-normal text-body"
-              ></p>
-            </div>
-
-            <div className="px-1 pb-2 pt-4 mx-auto text-center">
-              <button
-                className="bg-secondary text-primary font-regular py-2.5 px-6 rounded-default text-xl shadow-xl active:bg-s-hover my-2 w-full"
-                onClick={addToCart}
-                style={{ margin: "50px 50px", width: "60%" }}
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default SingleProduct;
+              </p> */
+}

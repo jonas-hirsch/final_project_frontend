@@ -5,6 +5,7 @@ import { Add24 } from "@carbon/icons-react";
 import { useHistory, } from "react-router-dom";
 import CategoryNavTab from "./CategoryNavTab";
 import client from "../../utils/client";
+import { blue } from "@material-ui/core/colors";
 
 
 const ProductsCategory = () => {
@@ -49,7 +50,7 @@ const ProductsCategory = () => {
     <>
       <div className="tabs flex flex-wrap">
         <div className="w-full max-w-full">
-          <ul className="flex flex-wrap pt-3 pb-2 flex-row" role="tablist">
+          <ul className="flex flex-wrap pt-3 pb-2 flex-row md:w-4/5 md:mx-auto" role="tablist">
             {categories.map((category, index, array) => (
               <CategoryNavTab
                 categoryName={category.name}
@@ -60,7 +61,7 @@ const ProductsCategory = () => {
               />
             ))}
           </ul>
-          <div className="relative flex flex-col min-w-0 break-words w-full mb-6 text-left shadow-sm">
+          <div className="relative flex flex-col min-w-0 break-words w-full mb-6 text-left shadow-sm md:w-4/5 md:mx-auto">
             <div className="px-4 py-5"  >
               <div className="tabs-content" >
                 <div id="link1">
@@ -69,16 +70,16 @@ const ProductsCategory = () => {
                       {products.map((product) => {
                         return (
                           <div
-                              className="justify-center align-center  rounded-default shadow-lg my-5 mx-2 w-full md:w-1/3 md:overflow-hidden pb-3 hover:shadow-xl lg:w-1/4 overflow-hidden "
+                              className="justify-center align-center rounded-default shadow-lg my-5 mx-2 w-full md:w-1/3 md:overflow-hidden pb-3 hover:shadow-xl lg:w-1/4 overflow-hidden "
                               key={product.id}
                               id="container"
                             >
                               <img
                                 className="w-full"
                                 style={{
-                                  width: "100%",
-                                  marginBottom: "-50px",
-                                  marginTop: "-40px",
+                                  width: "90%",
+                                  marginBottom: "-5px",
+                                  marginTop: "-20px",
                                 }}
                                 src={
                                   product.media
@@ -91,12 +92,7 @@ const ProductsCategory = () => {
                                 <p className="text-left text-xl text-secondary font-normal tracking-wide">
                                   {product.title}
                                 </p>
-                                <span
-                                  style={{
-                                    display: "flex",
-                                    justifyContent: "space-between",
-                                  }}
-                                >
+                                <div className="flex justify-between pt-2">
                                   <p className="text-base text-left font-light text-body tracking-wide mb-6">
                                     {product &&
                                       product.stock &&
@@ -108,7 +104,7 @@ const ProductsCategory = () => {
                                       <Add24 />
                                     </button>{" "}
                                   </Link>
-                                </span>
+                                </div>
                                 <button
                                   onClick={() =>
                                     history.push("/catalog/" + product.id)
