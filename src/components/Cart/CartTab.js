@@ -16,7 +16,7 @@ const CartTab = ({
   return (
     <div className={openTab === cartIndex + 1 ? "block" : "hidden"} id="link1">
       <div className="text-md text-body">
-        <div className="flex justify-center align-center p-2 text-3xl">
+        <div className="flex justify-center p-2 text-3xl">
           <h3>Cart</h3>
         </div>
       </div>
