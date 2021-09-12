@@ -34,7 +34,7 @@ const Login = () => {
       <div>
         <div>
           <h1 className="w-full py-40 primary font-semibold text-6xl justify-center flex">
-            Welcome Back
+            Welcome to JBM 
           </h1>
         </div>
         {/* <div>

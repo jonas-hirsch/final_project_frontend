@@ -45,27 +45,27 @@ const CartItem = ({ cartItem, deleteCartItem, cartItems, setCartItems }) => {
 
   return (
     <div
-      style={{ margin: " 0 auto" }}
-      className="divide-y divide-gray-700 border border-light w-md max-w-md rounded-default"
+      
+      className="mx-auto divide-y divide-gray-700 border border-light w-lg max-w-full rounded-default"
     >
-      <div className="m-2 w-md max-w-md p-2 rounded-default">
-        <div className="flex pt-2">
+      <div className="mx-auto m-2 w-md max-w-lg p-2 rounded-default md:max-w-full">
+        <div className="flex">
           <img
             src={cartItem.media && cartItem.media[0].path}
             alt="Example"
-            className="w-1/2 rounded-default mr-4"
+            className="w-1/4 max-w-1/4 rounded-default md:w-1/6"
           />
-          <div className="flex flex-col justify-between py-0.5 w-full">
-            <div className="flex justify-between">
-              <p className="text-left text-secondary text-2xl font-semibold">
+          <div className="flex flex-col justify-between py-0.5 px-1 w-4/5">
+            <div className="flex justify-evenly">
+              <p className="text-right text-secondary text-xl font-normal md:font-semibold md:text-2xl">
                 {cartItem.title}
               </p>
               <button onClick={deleteItem}>
-                <Close24 className="active:text-danger " />
+                <Close24 className="active:text-danger text-secondary" />
               </button>
             </div>
             <div>
-              <p className="flex justify-start w-full ">
+              <p className="flex justify-end w-4/5 ">
                 <span className="font-regular text-md">Quantity: &nbsp;</span>{" "}
                 <span className="pl-6 ">
                   <button
