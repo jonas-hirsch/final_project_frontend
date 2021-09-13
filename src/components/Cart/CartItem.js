@@ -44,47 +44,47 @@ const CartItem = ({ cartItem, deleteCartItem, cartItems, setCartItems }) => {
   };
 
   return (
-    <div
-      
-      className="mx-auto divide-y divide-gray-700 border border-light w-lg max-w-full rounded-default"
-    >
-      <div className="mx-auto m-2 w-md max-w-lg p-2 rounded-default md:max-w-full">
-        <div className="flex">
+    <div className="mx-auto flex justify-between w-full rounded-default md:w-3/5 lg:w-2/5 ">
+      <div className="shadow-md mx-auto m-2 w-md max-w-full p-2 border border-light rounded-default">
+        <div className="flex justify-between">
           <img
             src={cartItem.media && cartItem.media[0].path}
             alt="Example"
-            className="w-1/4 max-w-1/4 rounded-default md:w-1/6"
+            className="w-1/6 max-w-1/6 rounded-default md:w-1/6"
           />
-          <div className="flex flex-col justify-between py-0.5 px-1 w-4/5">
-            <div className="flex justify-evenly">
-              <p className="text-right text-secondary text-xl font-normal md:font-semibold md:text-2xl">
+          <div className="flex flex-col justify-between py-0.5 px-1 w-3/5">
+            <div className="flex justify-between">
+              <p className="text-left text-secondary text-xl font-normal md:text-2xl">
                 {cartItem.title}
               </p>
               <button onClick={deleteItem}>
-                <Close24 className="active:text-danger text-secondary" />
+                <Close24 className="active:text-danger text-secondary relativ" />
               </button>
             </div>
             <div>
-              <p className="flex justify-end w-4/5 ">
-                <span className="font-regular text-md">Quantity: &nbsp;</span>{" "}
-                <span className="pl-6 ">
-                  <button
-                    className="font-semibold text-2xl"
-                    onClick={() => handleChangeQuantity(cartItem, -1)}
-                  >
-                    - &nbsp;
-                  </button>
-                  <button className="font-semibold text-2xl">
-                    {cartItem.quantity} &nbsp;
-                  </button>
-                  <button
-                    className="font-semibold text-2xl"
-                    onClick={() => handleChangeQuantity(cartItem, 1)}
-                  >
-                    + &nbsp;
-                  </button>
-                </span>
-              </p>
+              <div className="flex justify-between w-4/5 ">
+                <div className="flex">
+                  <div className="font-regular text-md">Quantity: &nbsp;</div>{" "}
+                  <div className="pl-6 ">
+                    <button
+                      className="font-semibold text-2xl"
+                      onClick={() => handleChangeQuantity(cartItem, -1)}
+                    >
+                      - &nbsp;
+                    </button>
+                    <button className="font-semibold text-2xl">
+                      {cartItem.quantity} &nbsp;
+                    </button>
+                    <button
+                      className="font-semibold text-2xl"
+                      onClick={() => handleChangeQuantity(cartItem, 1)}
+                    >
+                      + &nbsp;
+                    </button>
+                  </div>
+                </div>
+                <div>Price:</div>
+              </div>
             </div>
           </div>
         </div>
