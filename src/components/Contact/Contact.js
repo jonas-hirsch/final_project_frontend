@@ -26,7 +26,7 @@ const Contact = () => {
         </a>
       </div>
       <div className='flex items-baseline justify-between flex-wrap'>
-        <div className='pl-20 mt-20'>
+        <div className='pl-20 pt-20 md:mx-auto'>
           <h2 className="text-4xl mb-2 font-semibold">Contact with us</h2>
           <p className='text-xl mb-6'>You can contact us on social networks</p>
           <div className='text-link space-x-8'>
