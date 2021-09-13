@@ -137,36 +137,4 @@ const SingleProduct = () => {
 
 export default SingleProduct;
 
-{
-  /* <p className="font-normal text-body">
-                Quantity:
-                <span className="pl-6 ">
-                  <button className="font-semibold text-secondary">
-                    - &nbsp;
-                  </button>
-                  <button className="font-semibold text-secondary">
-                    1 &nbsp;
-                  </button>
-                  <button className="font-semibold text-secondary">
-                    + &nbsp;
-                  </button>
-                </span>
-              </p>
-              <p className="font-normal text-body">
-                Size:
-                <span className="pl-14">
-                  <button className="pr-2 font-semibold text-secondary">
-                    S&nbsp;
-                  </button>
-                  <button className="pr-2 font-semibold text-secondary">
-                    M&nbsp;
-                  </button>
-                  <button className="pr-2 font-semibold text-secondary">
-                    L&nbsp;
-                  </button>
-                  <button className="pr-2 font-semibold text-secondary">
-                    XL&nbsp;
-                  </button>
-                </span>
-              </p> */
-}
+  
