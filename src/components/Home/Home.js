@@ -29,18 +29,18 @@ const Home = () => {
                 >ENJOY WITH LOVE !</span>
             </div>
 
-            <div className="px-4 mb-28">
+            <div className="px-4 m-28">
                 <div className=' rounded-default category-wrapper sm:w-full md:flex items-center justify-center md:space-x-6'>
                     {/* Extra Wish */}
                     <div className="rounded-default relative w-full lg:w-1/3 overflow-hidden pb-3">
                         <button onClick={() => history.push('/catalog')} >
-                            <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1266&q=80" alt='Example' className='w-full rounded-default' />
+                            <img src="hoodie.jpg" alt='Hoodies' className='w-full rounded-default' />
                             <span><p className=" absolute text-4xl text-secondary font-semibold tracking-wide bottom-6 ">HOODIE &#8594;</p></span>
                         </button>
                     </div>
                     <div className="rounded-default relative w-full lg:w-1/3 overflow-hidden pb-3">
                         <button onClick={() => history.push('/catalog')} >
-                            <img src="https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1266&q=80" alt='Example' className='w-full rounded-default opacity-50' />
+                            <img src="tshirt.jpg" alt='T-Shirts' className='w-full rounded-default' />
                             <span><p className=" absolute text-4xl text-secondary font-semibold tracking-wide bottom-6 ">SHIRT  &#8594;</p></span>
 
                         </button>
@@ -50,7 +50,7 @@ const Home = () => {
                 <div className="rounded-default category-wrapper sm:w-full md:flex items-center justify-center md:space-x-6">
                     <div className="rounded-default relative w-full lg:w-1/3 overflow-hidden pb-3">
                         <button onClick={() => history.push('/catalog')} >
-                            <img src="https://images.unsplash.com/photo-1574172858542-732d718a1ab7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y3VwfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt='Example' className='w-full rounded-default' />
+                            <img src="cups.jpg" alt='Cupsimage' className='w-full rounded-default' />
                             <span><p className=" absolute text-4xl text-white text-secondary font-semibold tracking-wide bottom-6 ">GEAR  &#8594;</p></span>
 
                         </button>
@@ -58,7 +58,7 @@ const Home = () => {
                     <div className="rounded-default relative w-full lg:w-1/3 overflow-hidden pb-3">
                         <button onClick={() => history.push('/catalog')} >
 
-                            <img src="https://images.unsplash.com/photo-1473755504818-b72b6dfdc226?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTV8fGJvb2tzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt='Example' className='w-full rounded-default' />
+                            <img src="books.jpg" alt='Booksimage' className='w-full rounded-default' />
                             <span><p className=" absolute text-4xl text-white font-semibold tracking-wide bottom-6 ">BOOKS  &#8594;</p></span>
 
                         </button>
