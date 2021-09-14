@@ -29,7 +29,7 @@ const Home = () => {
                 >ENJOY WITH LOVE !</span>
             </div>
 
-            <div className="px-4 m-28">
+            <div className="px-4 md:m-28">
                 <div className=' rounded-default category-wrapper sm:w-full md:flex items-center justify-center md:space-x-6'>
                     {/* Extra Wish */}
                     <div className="rounded-default relative w-full lg:w-1/3 overflow-hidden pb-3">
