@@ -1,6 +1,6 @@
 # Hi and Welcome to my Final-Project JBM Coding Store for Geeks and Codelover!
 
-<img src="https://user-images.githubusercontent.com/81374245/133248495-938c1768-80ec-4a61-bb9a-a26b0a40b809.png">E-com Storee<img/>
+<img src="https://user-images.githubusercontent.com/81374245/133248495-938c1768-80ec-4a61-bb9a-a26b0a40b809.png"><img/>
 
 My Contributes and I created an E-commerce Store without any UI Library. We created everything from Scratch.
 
