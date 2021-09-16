@@ -32,34 +32,34 @@ const Home = () => {
             <div className="px-4 md:m-28">
                 <div className=' rounded-default category-wrapper sm:w-full md:flex items-center justify-center md:space-x-6'>
                     {/* Extra Wish */}
-                    <div className="rounded-default relative w-full lg:w-3/5 overflow-hidden pb-3">
+                    <div className="rounded-default relative w-full md:w-3/4 overflow-hidden pb-3 lg:w-1/3">
                         <button onClick={() => history.push('/catalog')} >
                             <img src="hoodie.jpg" alt='Hoodies' className='w-full rounded-default' />
-                            <span><p className=" absolute text-4xl text-secondary font-semibold tracking-wide bottom-6 ">HOODIE &#8594;</p></span>
+                            <span><p className=" absolute pl-2 text-4xl text-secondary font-semibold tracking-wide bottom-6 ">HOODIE &#8594;</p></span>
                         </button>
                     </div>
-                    <div className="rounded-default relative w-full lg:w-3/5 overflow-hidden pb-3">
+                    <div className="rounded-default relative w-full md:w-3/4 overflow-hidden pb-3 lg:w-1/3">
                         <button onClick={() => history.push('/catalog')} >
                             <img src="tshirt.jpg" alt='T-Shirts' className='w-full rounded-default' />
-                            <span><p className=" absolute text-4xl text-secondary font-semibold tracking-wide bottom-6 ">SHIRT  &#8594;</p></span>
+                            <span><p className=" absolute pl-2 text-4xl text-secondary font-semibold tracking-wide bottom-6 ">SHIRT  &#8594;</p></span>
 
                         </button>
                     </div>
                 </div>
 
                 <div className="rounded-default category-wrapper sm:w-full md:flex items-center justify-center md:space-x-6">
-                    <div className="rounded-default relative w-full lg:w-3/5 overflow-hidden pb-3">
+                    <div className="rounded-default relative w-full md:w-3/4 overflow-hidden pb-3 lg:w-1/3">
                         <button onClick={() => history.push('/catalog')} >
                             <img src="cups.jpg" alt='Cupsimage' className='w-full rounded-default' />
-                            <span><p className=" absolute text-4xl text-white text-secondary font-semibold tracking-wide bottom-6 ">GEAR  &#8594;</p></span>
+                            <span><p className=" absolute pl-2 text-4xl text-white text-secondary font-semibold tracking-wide bottom-6 ">GEAR  &#8594;</p></span>
 
                         </button>
                     </div>
-                    <div className="rounded-default relative w-full md:w-3/5 overflow-hidden pb-3">
+                    <div className="rounded-default relative w-full md:w-3/4 overflow-hidden pb-3 lg:w-1/3">
                         <button onClick={() => history.push('/catalog')} >
 
                             <img src="books.jpg" alt='Booksimage' className='w-full rounded-default' />
-                            <span><p className=" absolute text-4xl text-white font-semibold tracking-wide bottom-6 ">BOOKS  &#8594;</p></span>
+                            <span><p className=" absolute pl-2 text-4xl text-white font-semibold tracking-wide bottom-6 ">BOOKS  &#8594;</p></span>
 
                         </button>
                     </div>
