@@ -55,7 +55,7 @@ const Home = () => {
 
                         </button>
                     </div>
-                    <div className="rounded-default relative w-full lg:w-3/5 overflow-hidden pb-3">
+                    <div className="rounded-default relative w-full md:w-3/5 overflow-hidden pb-3">
                         <button onClick={() => history.push('/catalog')} >
 
                             <img src="books.jpg" alt='Booksimage' className='w-full rounded-default' />
