@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext} from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Add24 } from "@carbon/icons-react";
@@ -6,6 +6,11 @@ import { useHistory, } from "react-router-dom";
 import CategoryNavTab from "./CategoryNavTab";
 import client from "../../utils/client";
 import { blue } from "@material-ui/core/colors";
+import { addProductToCart } from "../../utils/shoppingCart";
+import { ToastContainer, toast } from "react-toastify";
+import AuthContext from "../../context/AuthContext";
+import "react-toastify/dist/ReactToastify.css";
+
 
 
 const ProductsCategory = () => {
@@ -15,6 +20,10 @@ const ProductsCategory = () => {
   const [openTab, setOpenTab] = useState(3);
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [stockId, setStockId] = useState();
+  const { me } = useContext(AuthContext);
+
+
 
   useEffect(() => {
     client.get("/categories")
@@ -46,8 +55,24 @@ const ProductsCategory = () => {
     setOpenTab(categoryIndex);
   };
 
+  const selectItemToCart = (e) => {
+    setStockId(e.target.value);
+    console.log(e.target.value);
+  }; 
+  const addToCart = () => {
+    toast("Product added to the your shopping cart.", {
+      position: "top-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+    addProductToCart(stockId, 1, me);
+  };
+
   return (
-    <>
       <div className="tabs flex flex-wrap">
         <div className="w-full max-w-full">
           <ul className="flex flex-wrap pt-3 pb-2 flex-row md:w-4/5 md:mx-auto" role="tablist">
@@ -69,6 +94,17 @@ const ProductsCategory = () => {
                     <div className="flex text-center justify-around flex-wrap">
                       {products.map((product) => {
                         return (
+                          <>
+                          <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+      />
                           <div
                               className="justify-center align-center rounded-default shadow-lg my-5 mx-2 w-full md:w-1/3 md:overflow-hidden pb-3 hover:shadow-xl lg:w-1/4 overflow-hidden "
                               key={product.id}
@@ -99,11 +135,11 @@ const ProductsCategory = () => {
                                       product.stock[0].price}
                                     €
                                   </p>
-                                  <Link to={"/catalog/" + product.id}>
-                                    <button>
+                                  
+                                    <button onClick={addToCart}>
                                       <Add24 />
-                                    </button>{" "}
-                                  </Link>
+                                    </button>
+                                  
                                 </div>
                                 <button
                                   onClick={() =>
@@ -115,6 +151,7 @@ const ProductsCategory = () => {
                                 </button>
                               </div>
                             </div>
+                            </>
                         );
                       })}
                     </div>
@@ -125,7 +162,6 @@ const ProductsCategory = () => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 export default ProductsCategory;
