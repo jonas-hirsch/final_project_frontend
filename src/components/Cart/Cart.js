@@ -24,6 +24,7 @@ const Cart = () => {
     setCartItems((prev) => prev.filter((item) => item.id !== cartItem.id));
   };
 
+  /*
   useEffect(() => {
     const fetchData = async () => {
       const cart = await getShoppingCartItems(me);
@@ -45,6 +46,7 @@ const Cart = () => {
     };
     fetchData();
   }, [me, setMe]);
+  */
 
   const onSetOpenTab = (tabIndex) => {
     if (tabIndex !== 3) {
@@ -52,9 +54,11 @@ const Cart = () => {
     }
   };
 
+  /*
   if (!me) {
     return <></>;
   }
+  */
   return (
     <>
       <div

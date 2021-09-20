@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import { logout } from "../../utils/auth";
-//import { Badge } from "minja-ui";
+// import { Badge} from "material"
 import { useHistory } from "react-router-dom";
 import {
   Menu24,
