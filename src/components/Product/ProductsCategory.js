@@ -104,7 +104,7 @@ const ProductsCategory = () => {
                             draggable
                           />
                           <div
-                            className="justify-center align-center rounded-default shadow-lg my-5 mx-2 w-full md:w-1/3 md:overflow-hidden pb-3 hover:shadow-xl lg:w-1/4 overflow-hidden "
+                            className="justify-center align-center rounded-default shadow-lg my-5 mx-2 sm:w-full md:w-1/3 md:overflow-hidden pb-3 hover:shadow-xl lg:w-1/4 overflow-hidden "
                             key={product.id}
                             id="container"
                           >

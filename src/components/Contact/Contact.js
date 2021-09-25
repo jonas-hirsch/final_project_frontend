@@ -4,8 +4,9 @@ import { Email24, Phone24, Location24, LogoFacebook32, LogoTwitter32, LogoInstag
 const Contact = () => {
   return (
     <div className="min-h-screen md:min-h-screen lg:min-h-screen my-4">
-      <h1 className="text-5xl pl-20 mb-10 justify-center flex">Contact</h1>
-      <div className="flex items-center justify-around flex-wrap mb-4">
+      <h1 className="text-5xl mb-10 justify-center flex mx-auto">Contact</h1>
+      <hr/>
+      <div className="flex mt-10 items-center justify-around flex-wrap mb-4 mx-auto">
         <a href="/#" emailto="http://">
           <span className='flex items-center '>
             <Email24 className='mr-2 text-link' />
