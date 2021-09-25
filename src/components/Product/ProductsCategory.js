@@ -52,12 +52,6 @@ const ProductsCategory = () => {
     setOpenTab(categoryIndex);
   };
 
-  /*
-  const selectItemToCart = (e) => {
-    setStockId(e.target.value);
-    console.log(e.target.value);
-  };*/
-
   const addToCart = (product) => {
     console.log({product});
     toast("Product added to the your shopping cart.", {
