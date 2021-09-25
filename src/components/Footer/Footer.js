@@ -11,7 +11,7 @@ const Footer = () => {
 				<footer className="bg-primary text-primary">
 					<div className="container mx-auto px-2 pt-10 pb-6 ">
 						<div className="flex flex-wrap">
-							<div className="w-full md:w-1/4 text-center md:text-center mb-4 md:pr-20 ">
+							<div className="w-full md:w-1/4 text-center md:text-center mb-4 md:mx-auto ">
 								<p className="uppercase mb-4 font-bold text-3xl">JBM</p>
 								<ul className="mb-4 flex justify-center ">
 									<li className="mt-2">
