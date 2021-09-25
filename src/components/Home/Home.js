@@ -12,7 +12,7 @@ const Home = () => {
         <div>
             <div className="justify-center text-center w-full mb-20 max-w-full h-auto">
                 <div className="text-center" style={{backgroundColor: '#222'}}>
-                    <div className="justify-center text-center pt-24 px-4 text-primary md:ml-20 lg:ml-20">
+                    <div className="justify-center text-center pt-24 px-4 text-primary md:mx-20 lg:mx-20">
                         <div className="text-center font-bold mb-2" style={{ fontSize: '90px'}}><span>EAT</span> / <span className="text-link">SLEEP</span><br /> <span className="text-link">CODE</span> / <span>REPEAT</span></div>
                         <div className="text-3xl mt-10  mb-20 text-disabled w-full text-center "><span className="text-link font-semibold">CODE</span> hard so you can <span className="font-semibold">SHOP</span> harder.</div> 
                         <button onClick={() => history.push('/catalog')} className='bg-white text-secondary font-regular py-2.5 px-6 rounded-default text-2xl shadow-xl active:bg-white active:text-secondary mb-14'>Shop now</button>
@@ -31,7 +31,6 @@ const Home = () => {
 
             <div className="px-4 md:m-28">
                 <div className=' rounded-default category-wrapper sm:w-full md:flex items-center justify-center md:space-x-6'>
-                    {/* Extra Wish */}
                     <div className="rounded-default relative w-full md:w-3/4 overflow-hidden pb-3 lg:w-1/3">
                         <button onClick={() => history.push('/catalog')} >
                             <img src="hoodie.jpg" alt='Hoodies' className='w-full rounded-default' />
