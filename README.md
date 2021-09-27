@@ -15,7 +15,7 @@ please run the application with npm start
 
 Have fun and use whatever you want from this Project. 
 
-<button to="url(https://ecommerce-showcase-project.netlify.app)">Live-Version</button>
+<button link="url(https://ecommerce-showcase-project.netlify.app)">Live-Version</button>
 
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/23433c30-28c0-430a-ad3a-ace88170616f/deploy-status)](https://ecommerce-showcase-project.netlify.app)
 
