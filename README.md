@@ -13,8 +13,9 @@ MockUpUser: Username: Ben@wbs.com
             
 please run the application with npm start
 
-Have fun and use whatever you wnat from this Project. 
+Have fun and use whatever you want from this Project. 
 
+<button to="url(https://ecommerce-showcase-project.netlify.app)">Live-Version</button>
 
 
 
